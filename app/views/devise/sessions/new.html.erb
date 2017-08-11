@@ -1,10 +1,10 @@
 <div class="inner-bg">
   <div class="container">
     <div class="row">
-      <div class="<%= current_user.present? ? 'col-sm-12' : 'col-sm-7' %> text">
+      <div class="col-sm-7 text">
         <h1 class="wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig;">Learn to Code in <strong>1 Month</strong></h1>
         <div class="description wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig;">
-        	<p>
+          <p>
             We have been working very hard to create the new version of our course. 
             It comes with a lot of new features, easy to follow videos and images. Check it out now!
           </p>
@@ -14,50 +14,36 @@
           <a class="btn btn-link-2 scroll-link" href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#features">Learn more</a>
         </div>
       </div>
-      <% unless current_user.present?  %>
-        <div class="col-sm-5 form-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+      <div class="col-sm-5 form-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
           <div class="form-top">
-          	<div class="form-top-left">
-              <h3>Sign up now</h3>
-              <p>Fill in the form below to get instant access:</p>
+            <div class="form-top-left">
+              <h3>Sign In now</h3>
+              <p>Fill in the form below to get dashboard:</p>
             </div>
             <div class="form-top-right">
               <span aria-hidden="true" class="typcn typcn-pencil"></span>
             </div>
           </div>          
-          <div class="form-bottom">
+          <div class="form-bottom">            
             <%= render partial: '/layouts/flash' %>
-            <%= form_for @user, url: user_registration_path, html: {class: 'user-registration'} do |f| %>            	
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name, html: {class: 'user-session'})) do |f| %>
               <div class="form-group">
-              	<%= f.label :name, 'Fullname', class: 'sr-only' %>                
-                <%= f.text_field :name, placeholder: 'Full Name', class: 'form-first-name form-control' %>
-              </div>
-              <div class="form-group">
-              	<%= f.label :username, 'Username', class: 'sr-only' %>                
-                <%= f.text_field :username, placeholder: 'Username', class: 'form-first-name form-control' %>
-              </div>
-              <div class="form-group">
-              	<%= f.label :email, 'Email', class: 'sr-only' %>                
+                <%= f.label :email, 'Email', class: 'sr-only' %>                
                 <%= f.email_field :email, placeholder: 'Email', class: 'form-email form-control' %>              
               </div>
               <div class="form-group">
-              	<%= f.label :password, 'Password', class: 'sr-only' %>                
+                <%= f.label :password, 'Password', class: 'sr-only' %>                
                 <%= f.password_field :password, placeholder: 'Password', class: 'form-first-name form-control' %>
               </div>
-              <div class="form-group">
-              	<%= f.label :password_confirmation, 'Password', class: 'sr-only' %>                
-                <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation', class: 'form-first-name form-control' %>
-              </div>                            
-              <%= f.button 'Sign Up !', class: 'btn', data: {disable_with: 'Loading...'}, type: 'submit' %>
+              <%= f.button 'Sign In !', class: 'btn', data: {disable_with: 'Loading...'}, type: 'submit' %>                
               <div class="form-links">
-                <%= link_to "Log in", new_session_path('user') %><br>
+                <%= render "devise/shared/links" %>                  
                 <a href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> - 
                 <a href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
               </div>
             <% end %>
           </div>
-        </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>

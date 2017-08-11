@@ -18,5 +18,13 @@
 //= require landing/wow.min.js
 //= require landing/retina-1.1.0.min.js
 //= require landing/scripts.js
+//= require jquery.validate
+//= require landing/validations.js
 
 
+
+$(document).ready (function(){
+  $(".alert").fadeTo(10000, 500).slideUp(500, function(){
+  	$(".alert").slideUp(500);
+  });
+});

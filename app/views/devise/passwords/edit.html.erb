@@ -4,7 +4,7 @@
       <div class="col-sm-7 text">
         <h1 class="wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig;">Learn to Code in <strong>1 Month</strong></h1>
         <div class="description wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig;">
-        	<p>
+          <p>
             We have been working very hard to create the new version of our course. 
             It comes with a lot of new features, easy to follow videos and images. Check it out now!
           </p>
@@ -16,38 +16,34 @@
       </div>
       <div class="col-sm-5 form-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
           <div class="form-top">
-          	<div class="form-top-left">
-              <h3>Sign up now</h3>
-              <p>Fill in the form below to get instant access:</p>
+            <div class="form-top-left">
+              <h3>Change your password</h3>
+              <p>Fill in the form below to change password:</p>
             </div>
             <div class="form-top-right">
               <span aria-hidden="true" class="typcn typcn-pencil"></span>
             </div>
-          </div>
-          <div class="form-bottom">
-            <form role="form" action="http://azmind.com/premium/marco/v2-4/layout-10/index.html" method="post">
+          </div>          
+          <div class="form-bottom">            
+            <%= render partial: '/layouts/flash' %>
+            <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'user-change-password' }) do |f| %>
+              <%= devise_error_messages! %>
+              <%= f.hidden_field :reset_password_token %>
               <div class="form-group">
-                <label class="sr-only" for="form-first-name">First name</label>
-                <input type="text" name="form-first-name" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
+                <%= f.label :password, 'Password', class: 'sr-only' %>                
+                <%= f.password_field :password, placeholder: 'Password', class: 'form-first-name form-control' %>
               </div>
               <div class="form-group">
-                <label class="sr-only" for="form-last-name">Last name</label>
-                <input type="text" name="form-last-name" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="form-email">Email</label>
-                <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
-              </div>
-              <div class="form-group">
-                <label class="sr-only" for="form-about-yourself">About yourself</label>
-                <textarea name="form-about-yourself" placeholder="About yourself..." class="form-about-yourself form-control" id="form-about-yourself"></textarea>
-              </div>
-              <button type="submit" class="btn">Sign me up!</button>
+                <%= f.label :password_confirmation, 'Password', class: 'sr-only' %>                
+                <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation', class: 'form-first-name form-control' %>
+              </div>                            
+              <%= f.button 'Change', class: 'btn', data: {disable_with: 'Loading...'}, type: 'submit' %>                
               <div class="form-links">
+                <%= render "devise/shared/links" %>                  
                 <a href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> - 
                 <a href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
               </div>
-            </form>
+            <% end %>
           </div>
       </div>
     </div>

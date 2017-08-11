@@ -1,0 +1,46 @@
+<div class="inner-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7 text">
+        <h1 class="wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig;">Learn to Code in <strong>1 Month</strong></h1>
+        <div class="description wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig;">
+          <p>
+            We have been working very hard to create the new version of our course. 
+            It comes with a lot of new features, easy to follow videos and images. Check it out now!
+          </p>
+        </div>
+        <div class="top-big-link wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+          <a class="btn btn-link-1 scroll-link" href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#pricing">Our prices</a>
+          <a class="btn btn-link-2 scroll-link" href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#features">Learn more</a>
+        </div>
+      </div>
+      <div class="col-sm-5 form-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+          <div class="form-top">
+            <div class="form-top-left">
+              <h3>Resend confirmation</h3>
+              <p>Fill in the form below to resend:</p>
+            </div>
+            <div class="form-top-right">
+              <span aria-hidden="true" class="typcn typcn-pencil"></span>
+            </div>
+          </div>          
+          <div class="form-bottom">            
+            <%= render partial: '/layouts/flash' %>
+            <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: 'user-resent-confirmation' }) do |f| %>
+              <%= devise_error_messages! %>              
+              <div class="form-group">
+                <%= f.label :email, 'Email', class: 'sr-only' %>                
+                <%= f.email_field :email, placeholder: 'Email', autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-first-name form-control' %>
+              </div>
+              <%= f.button 'Resend', class: 'btn', data: {disable_with: 'Loading...'}, type: 'submit' %>                
+              <div class="form-links">
+                <%= render "devise/shared/links" %>                  
+                <a href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> - 
+                <a href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
+              </div>
+            <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

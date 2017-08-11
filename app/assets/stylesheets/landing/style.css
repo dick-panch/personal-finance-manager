@@ -1,4 +1,6 @@
-
+.user-resent-confirmation{
+	color: #42bfc2;
+}
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -66,7 +68,7 @@ img { max-width: 100%; }
 	margin: -30px 0 0 -30px;
 	width: 60px;
 	height: 60px;
-	background: url(loading.gif) center center no-repeat;
+	background: url('landing/loading.gif') center center no-repeat;
 }
 
 
@@ -251,7 +253,7 @@ ul.navbar-nav {
 
 .navbar-brand {
 	width: 97px;
-	background: url(logo.png) left center no-repeat;
+	background: url('landing/logo.png') left center no-repeat;
 	text-indent: -99999px;
 }
 
@@ -262,6 +264,43 @@ ul.navbar-nav {
     padding: 120px 0 170px 0;
 }
 
+.top-content{
+	position: relative; 
+	z-index: 0; 
+	background: none;
+}
+.backstretch{
+	left: 0px; 
+	top: 0px; 
+	overflow: hidden; 
+	margin: 0px; 
+	padding: 0px; 
+	height: 906px; 
+	width: 1298px; 
+	z-index: -999998; 
+	position: absolute;
+}
+.backstretch img{
+	position: absolute; margin: 0px; padding: 0px; border: none; width: 1338.09px; height: 906px; max-height: none; max-width: none; z-index: -999999; left: -20.0462px; top: 0px;
+}
+.features.section-description{
+	visibility: visible; animation-name: fadeIn;
+}
+.wow.fadeInUp.animated{
+	visibility: visible; animation-name: fadeInUp;
+}
+.wow.fadeInLeft.animated{
+	visibility: visible; animation-name: fadeInLeft;
+}
+.wow.fadeInDown.animated{
+	visibility: visible; animation-name: fadeInDown;
+}
+.wow.fadeIn.animated{
+	visibility: visible; animation-name: fadeIn;
+}
+.how-it-works-container{
+	position: relative; z-index: 0; background: none;
+}
 .top-content .text {
 	padding-top: 120px;
 	color: #fff;
@@ -716,4 +755,16 @@ footer {
 
 .footer-copyright {
 	margin-top: 25px;
+}
+.backstretch2{
+	left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 916px; width: 1298px; z-index: -999998; position: absolute;
+}
+.backstretch2 img.bstretch{
+	position: absolute; margin: 0px; padding: 0px; border: none; width: 1352.86px; height: 916px; max-height: none; max-width: none; z-index: -999999; left: -27.4308px; top: 0px;
+}
+.backstretch3{
+	left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 420px; width: 1298px; z-index: -999998; position: absolute;
+}
+.backstretch3 img.bstretch{
+	position: absolute; margin: 0px; padding: 0px; border: none; width: 1298px; height: 878.854px; max-height: none; max-width: none; z-index: -999999; left: 0px; top: -229.427px;
 }
