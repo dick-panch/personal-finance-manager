@@ -10,8 +10,8 @@
           </p>
         </div>
         <div class="top-big-link wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-          <a class="btn btn-link-1 scroll-link" href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#pricing">Our prices</a>
-          <a class="btn btn-link-2 scroll-link" href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#features">Learn more</a>
+          <a class="btn btn-link-1 scroll-link" href="#pricing">Our prices</a>
+          <a class="btn btn-link-2 scroll-link" href="#features">Know More</a>
         </div>
       </div>
       <% unless current_user.present?  %>
@@ -51,8 +51,8 @@
               <%= f.button 'Sign Up !', class: 'btn', data: {disable_with: 'Loading...'}, type: 'submit' %>
               <div class="form-links">
                 <%= link_to "Log in", new_session_path('user') %><br>
-                <a href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> - 
-                <a href="http://azmind.com/premium/marco/v2-4/layout-10/index.html#" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
+                <a href="javascript:void(0);" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> - 
+                <a href="javascript:void(0);" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
               </div>
             <% end %>
           </div>
