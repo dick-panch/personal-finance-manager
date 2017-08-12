@@ -28,14 +28,11 @@
           <span class="nav-label">Dashboards</span>
         <% end %>
       </li>
-      <li class="<%= 'active' if controller.controller_name == 'categories' %>">
-        <% if current_user.is_admin? %>
-          <%= link_to admin_categories_url do %>
-            <i class="fa fa-table"></i>
-            <span class="nav-label">Category</span>
-          <% end %>          
-        <% end %>
-      </li>
+      <% if current_user.is_admin? %>
+        <%= render partial: '/layouts/theme/admin_list' %>
+      <% elsif current_user %>
+        <%= render partial: '/layouts/theme/normal_list' %>
+      <% end %>
     </ul>
   </div>
 </nav>

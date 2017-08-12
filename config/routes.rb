@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get '/dashboard' => 'dashboard#index', as: :dashboard
 
   ## Normal User Routes ------------------------------------------------
+  resources :categories
+  
   ## Admin Routes ------------------------------------------------------
   namespace :admin do
     resources :categories
