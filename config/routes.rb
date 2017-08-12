@@ -12,7 +12,15 @@ Rails.application.routes.draw do
   get 'existUsername' => 'api/users#existUsername'
   get 'existEmail' => 'api/users#existEmail'
   get 'notExistEmail' => 'api/users#notExistEmail'
+  get 'existCategory' => 'api/categories#existCategory'
 
   ## After Login
   get '/dashboard' => 'dashboard#index', as: :dashboard
+
+  ## Normal User Routes ------------------------------------------------
+  ## Admin Routes ------------------------------------------------------
+  namespace :admin do
+    resources :categories
+  end
+
 end

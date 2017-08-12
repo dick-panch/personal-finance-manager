@@ -1,0 +1,57 @@
+<div class='row wrapper border-bottom white-bg page-heading'>
+  <div class='col-lg-10'>
+    <h2>Categories</h2>
+    <ol class='breadcrumb'>
+      <%= render_breadcrumbs tag: :li %>
+    </ol>    
+  </div>
+  <div class='col-lg-2'>
+    <p class='add-record'>
+      <%= link_to admin_categories_url, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
+        <i class="fa fa-list"></i> List Categories
+      <% end %>
+    </p>    
+  </div>
+</div>
+
+<div class='wrapper wrapper-content animated fadeInRight'>
+  <div class='row'>
+    <div class='col-lg-12'>
+      <div class='ibox float-e-margins'>
+        <div class='ibox-content'>
+          <div class='table-responsive'>
+            <%= link_to edit_admin_category_path(category), data: {disable_with: "<i class='fa fa-spinner'></i> Edit".html_safe} do %>
+              <i class="fa fa-pencil"></i> Edit
+            <% end %>
+            <%= link_to admin_category_path(category), method: :delete, data: {disable_with: "<i class='fa fa-spinner'></i> Delete".html_safe, confirm: 'Are you sure want to delete this category ?'} do %>
+              <i class="fa fa-trash"></i> Delete
+            <% end %>
+
+            <table class='table table-bordered table-hover'>
+              <tr>
+                <td class="col-lg-3">ID</td>
+                <td><%= category.id %></td>
+              </tr>
+              <tr>
+                <td class="col-lg-3">Category Name</td>
+                <td><%= category.name %></td>
+              </tr>
+              <tr>
+                <td class="col-lg-3">Category Type</td>
+                <td><%= category.category_type %></td>
+              </tr>
+              <tr>
+                <td class="col-lg-3">Created At</td>
+                <td><%= local_time(category.created_at) %></td>
+              </tr>
+              <tr>
+                <td class="col-lg-3">Updated At</td>
+                <td><%= local_time(category.updated_at) %></td>
+              </tr>              
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

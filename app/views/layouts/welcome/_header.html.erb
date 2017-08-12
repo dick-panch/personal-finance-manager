@@ -21,7 +21,7 @@
 				<% end %>
 				<% if current_user.present? %>
 					<li><%= link_to 'Logout', destroy_user_session_url, method: :delete, class: 'btn btn-link-2' %></li>
-					<li><%= link_to 'Dashboard', '#', class: 'btn btn-link-2' %></li>
+					<li><%= link_to 'Dashboard', dashboard_url, class: 'btn btn-link-2' %></li>
 				<% elsif controller.controller_name == 'sessions' %>
 					<li><%= link_to 'Sign Up', '/', class: 'btn btn-link-2' %></li>
 				<% elsif controller.controller_name == 'welcome' %>

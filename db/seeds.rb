@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user = User.find_by(username: 'admin')
+unless user.present?
+	user = User.new({
+		name: 'Admin',
+		username: 'admin',
+		email: '11dipak.contact@gmail.com',
+		password: 'password',
+		password_confirmation: 'password',
+		role_id: 2
+	})
+	user.skip_confirmation!
+	user.save
+end

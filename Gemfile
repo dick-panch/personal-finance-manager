@@ -62,3 +62,15 @@ gem 'devise'
 
 # For Validation
 gem 'jquery-validation-rails'
+
+# For Decent Expose
+gem 'decent_exposure', '3.0.0'
+
+# For Breadcrum
+gem "breadcrumbs_on_rails"
+
+# For Friendly ID
+gem 'friendly_id', '~> 5.1.0'
+
+# Local Time
+gem 'local_time'
