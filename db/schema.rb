@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20170812204957) do
     t.integer "is_repeat", default: 0
     t.integer "transaction_type_id"
     t.integer "user_id"
+    t.integer "month", default: 0
+    t.integer "year", default: 0
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

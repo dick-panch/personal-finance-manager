@@ -5,3 +5,13 @@ a.chosen-single{
   border-radius: 0px !important;
   padding: 4px 4px 4px 10px !important;	
 }
+.month-dropdown{
+	margin-top: -3px;
+	padding: 0px;
+	padding-right: 10px;
+	select{
+		padding: 0px;
+    margin: 0px;
+    height: 25px;		
+	}
+}

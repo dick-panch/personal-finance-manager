@@ -17,7 +17,7 @@
             <div class="form-group">
               <%= f.label :transaction_date, 'Date', class: 'col-sm-2 control-label' %>
               <div class="col-sm-3">
-                <%= f.text_field :transaction_date, placeholder: 'Transaction Date', class: 'form-control datepicker' %>
+                <%= f.text_field :transaction_date, value: f.object.transaction_date.present? ? f.object.transaction_date.strftime('%d/%m/%Y') : '', placeholder: 'Transaction Date', class: 'form-control datepicker' %>
               </div>
 
               <%= f.label :amount, 'Amount', class: 'col-sm-2 control-label' %>

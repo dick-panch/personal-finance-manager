@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
 	before_action :authenticate_user!
 
-	expose :transactions, ->{ current_user.transactions.order('transaction_date DESC') }
+	expose :transactions, ->{ current_user.transactions.search(params) }
 	expose :transaction, find_by: :slug
 	expose :income_categories, -> { Category.where('(user_id IS NULL and category_type_id = ?) or user_id = ?', 2, current_user.id) }
 	expose :expense_categories, -> { Category.where('(user_id IS NULL and category_type_id = ?) or user_id = ?', 1, current_user.id) }
