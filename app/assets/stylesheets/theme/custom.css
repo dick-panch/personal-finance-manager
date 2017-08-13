@@ -9,7 +9,7 @@
     padding: 0;
     width: 22px;
     height: 22px;
-    background: assets-url('green.png') no-repeat;
+    background: url("green-09b374a6c78a307572562c713fa4c13361b46bb7805c986aa48d12626e3963af.png") no-repeat;
     border: none;
     cursor: pointer;
 }
@@ -52,7 +52,7 @@
 @media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
     .icheckbox_square-green,
     .iradio_square-green {
-        background-image: assets-url('green@2x.png');
+        background-image: url("green@2x-98fa90157454872b924b656cf68ee6251c2c6ce1c1eacf88eb16c4656dee3e8b.png");
         -webkit-background-size: 240px 24px;
         background-size: 240px 24px;
     }
