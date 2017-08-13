@@ -25,9 +25,9 @@ jQuery(document).ready(function() {
     /*
         Background slideshow
     */
-    $('.top-content').backstretch("/assets/landing/1.jpg");
-    $('.how-it-works-container').backstretch("/assets/landing/1.jpg");
-    $('.call-to-action-container').backstretch("/assets/landing/1.jpg");
+    $('.top-content').backstretch("/assets/landing/1-4244a62ac5ae51afb4b724bbf17c321b1673d61105c3cfc005a7c066bc00dd74.jpg");
+    $('.how-it-works-container').backstretch("/assets/landing/1-4244a62ac5ae51afb4b724bbf17c321b1673d61105c3cfc005a7c066bc00dd74.jpg");
+    $('.call-to-action-container').backstretch("/assets/landing/1-4244a62ac5ae51afb4b724bbf17c321b1673d61105c3cfc005a7c066bc00dd74.jpg");
     
     $('#top-navbar-1').on('shown.bs.collapse', function(){
     	$('.top-content').backstretch("resize");

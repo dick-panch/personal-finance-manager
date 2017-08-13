@@ -1,15 +1,15 @@
 @import 'bootstrap-sprockets';
-@import 'theme/bootstrap.min.css';
-@import 'theme/font-awesome.min.css';
-@import 'theme/toastr.min.css';
-@import 'theme/jquery.gritter.css';
-@import 'theme/animate.css';
-@import 'theme/style.css';
-@import 'theme/datatables.min.css';
-@import 'theme/custom.css';
-@import 'theme/datepicker3.css';
+@import 'theme/bootstrap.min';
+@import 'theme/font-awesome.min';
+@import 'theme/toastr.min';
+@import 'theme/jquery.gritter';
+@import 'theme/animate';
+@import 'theme/style';
+@import 'theme/datatables.min';
+@import 'theme/custom';
+@import 'theme/datepicker3';
 
 @import 'admin/categories';
-@import 'theme/select2.min.css';
-@import 'theme/bootstrap-chosen.css';
-@import 'transactions.scss';
+@import 'theme/select2.min';
+@import 'theme/bootstrap-chosen';
+@import 'transactions';

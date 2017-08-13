@@ -11,5 +11,10 @@ module WalletManager
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.assets.precompile << Proc.new { |path|
+ 			if path =~ /\.(eot|svg|ttf|woff)\z/
+    		true
+  		end
+		}
   end
 end

@@ -68,7 +68,7 @@ img { max-width: 100%; }
 	margin: -30px 0 0 -30px;
 	width: 60px;
 	height: 60px;
-	background: url('/assets/landing/loading.gif') center center no-repeat;
+	background: assets-url('/landing/loading.gif') center center no-repeat;
 }
 
 
@@ -253,7 +253,7 @@ ul.navbar-nav {
 
 .navbar-brand {
 	width: 97px;
-	background: url('landing/logo.png') left center no-repeat;
+	background: assets-url('/landing/logo.png') left center no-repeat;
 	text-indent: -99999px;
 }
 
