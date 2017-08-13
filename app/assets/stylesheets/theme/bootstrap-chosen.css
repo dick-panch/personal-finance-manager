@@ -77,9 +77,9 @@
 .chosen-container .chosen-results-scroll-down {
     bottom: 0; }
 .chosen-container .chosen-results-scroll-down span {
-    background: url("/assets/chosen-sprite.png") no-repeat -4px -3px; }
+    background: assets-url("chosen-sprite.png") no-repeat -4px -3px; }
 .chosen-container .chosen-results-scroll-up span {
-    background: url("/assets/chosen-sprite.png") no-repeat -22px -3px; }
+    background: assets-url("chosen-sprite.png") no-repeat -22px -3px; }
 
 .chosen-container-single .chosen-single {
     background-color: #fff;
