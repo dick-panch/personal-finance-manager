@@ -56,7 +56,7 @@
                     <td><%= transaction.try(:category).try(:name) %></td>
                     <td><%= transaction.payment_type %></td>
                     <td><%= transaction.transaction_type %></td>
-                    <td><%= transaction.amount %></td>
+                    <td><%= money_format(transaction.amount) %></td>
                     <td>
                         <%= link_to transaction_url(transaction), data: {disable_with: "<i class='fa fa-spinner'></i>".html_safe} do %>
                           <i class='fa fa-eye large'></i>
