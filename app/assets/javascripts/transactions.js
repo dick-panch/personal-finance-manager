@@ -7,7 +7,10 @@ $('.datepicker').datepicker({
   format: 'dd/mm/yyyy'
 });
 
-$('.chosen-select').chosen({width: "100%"});
+$('.chosen-select').chosen({
+	no_results_text: 'No results matched',
+  width: '100%'
+});
 
 // Validation
 $("#new_transaction").validate({
