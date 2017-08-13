@@ -7,8 +7,9 @@ GIT
       sass-rails (< 5.1)
       sprockets (< 4.0)
 
-PATH
-  remote: /dipak/rails_projects/finance_manager
+GIT
+  remote: https://github.com/dick-panch/finance-manager.git
+  revision: 401adff0e7b16b6326532e4f55da2cb58278faf2
   specs:
     finance_manager (0.1.0)
       devise (= 4.3.0)
