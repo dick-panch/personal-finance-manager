@@ -5,8 +5,26 @@
   <% end %>          
 </li>
 <li class="<%= 'active' if controller.controller_name == 'transactions' %>">
-  <%= link_to transactions_url do %>
-    <i class="fa fa-money"></i>
-    <span class="nav-label">Transaction</span>
-  <% end %>          
+  <a href="javascript:void(0);">
+  	<i class="fa fa-money"></i>
+  	<span class="nav-label">Transactions</span>
+  	<span class="fa arrow"></span>
+  </a>
+  <ul class="nav nav-second-level collapse" style="height: 0px;">
+    <li class="<%= 'active' if controller.action_name == 'index' %>">
+    	<%= link_to 'Generals', transactions_url %>    	
+    </li>
+    <li class="<%= 'active' if controller.action_name == 'monthly_expenses' %>">
+    	<%= link_to 'Monthly Expenses', monthly_expenses_transactions_url %>    		
+    </li>
+    <li class="<%= 'active' if controller.action_name == 'monthly_incomes' %>">
+    	<%= link_to 'Monthly Incomes', monthly_incomes_transactions_url %>    		
+    </li>
+    <li class="<%= 'active' if controller.action_name == 'yearly_expenses' %>">
+      <%= link_to 'Yearly Expenses', yearly_expenses_transactions_url %>        
+    </li>
+    <li class="<%= 'active' if controller.action_name == 'yearly_incomes' %>">
+      <%= link_to 'Yearly Incomes', yearly_incomes_transactions_url %>        
+    </li>    
+  </ul>
 </li>

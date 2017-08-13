@@ -19,7 +19,14 @@ Rails.application.routes.draw do
 
   ## Normal User Routes ------------------------------------------------
   resources :categories
-  resources :transactions
+  resources :transactions do
+    collection do
+      get :monthly_expenses, path: 'monthly-expenses'
+      get :monthly_incomes, path: 'monthly-incomes'
+      get :yearly_expenses, path: 'yearly-expenses'
+      get :yearly_incomes, path: 'yearly-incomes'      
+    end
+  end
   
   ## Admin Routes ------------------------------------------------------
   namespace :admin do
