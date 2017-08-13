@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+	before_action :authenticate_user!
 	before_action :unauthorize_access, only: [:edit, :update, :destroy, :show]
 
 	expose :categories, ->{ Category.where('user_id IS NULL or user_id = ?', current_user.id) }

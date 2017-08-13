@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170812133448) do
+ActiveRecord::Schema.define(version: 20170812204957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,26 @@ ActiveRecord::Schema.define(version: 20170812133448) do
     t.index ["category_type_id"], name: "index_categories_on_category_type_id"
     t.index ["slug"], name: "index_categories_on_slug"
     t.index ["user_id"], name: "index_categories_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "description"
+    t.date "transaction_date"
+    t.decimal "amount", default: "0.0"
+    t.boolean "is_paid", default: false
+    t.boolean "is_received", default: false
+    t.boolean "is_favorite", default: false
+    t.integer "category_id"
+    t.integer "payment_type_id", default: 1
+    t.integer "is_repeat", default: 0
+    t.integer "transaction_type_id"
+    t.integer "user_id"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_transactions_on_category_id"
+    t.index ["slug"], name: "index_transactions_on_slug", unique: true
+    t.index ["user_id"], name: "index_transactions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

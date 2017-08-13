@@ -1,16 +1,16 @@
 <div class='row wrapper border-bottom white-bg page-heading'>
   <div class='col-lg-10'>
-    <h2>Add New Category</h2>
+    <h2>Edit Transaction</h2>
     <ol class='breadcrumb'>
       <%= render_breadcrumbs tag: :li %>
     </ol>    
   </div>
   <div class='col-lg-2'>
     <p class='add-record text-right'>
-      <%= link_to categories_url, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
-        <i class="fa fa-table"></i> List Categories
+      <%= link_to transactions_url, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
+        <i class="fa fa-money"></i> List Transactions
       <% end %>
     </p>    
   </div>
 </div>
-<%= render partial: '/categories/form' %>
+<%= render partial: '/transactions/form' %>

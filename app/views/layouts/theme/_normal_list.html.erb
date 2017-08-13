@@ -4,3 +4,9 @@
     <span class="nav-label">Category</span>
   <% end %>          
 </li>
+<li class="<%= 'active' if controller.controller_name == 'transactions' %>">
+  <%= link_to transactions_url do %>
+    <i class="fa fa-money"></i>
+    <span class="nav-label">Transaction</span>
+  <% end %>          
+</li>

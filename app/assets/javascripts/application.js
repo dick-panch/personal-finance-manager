@@ -35,6 +35,9 @@
 //= require theme/icheck.min.js
 //= require jquery.validate
 //= require local-time
+//= require theme/bootstrap-datepicker.js
+//= require theme/chosen.jquery.js
+//= require theme/select2.full.min.js
 
 // For Table
 //= require theme/datatables.min.js
@@ -42,3 +45,4 @@
 // Extra JS
 //= require theme/dashboard.js
 //= require admin/categories.js
+//= require transactions.js
