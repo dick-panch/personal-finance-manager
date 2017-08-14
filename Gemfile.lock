@@ -59,6 +59,9 @@ GEM
     autoprefixer-rails (7.1.2.4)
       execjs
     bcrypt (3.1.11)
+    bcrypt (3.1.11-java)
+    bcrypt (3.1.11-x64-mingw32)
+    bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
@@ -87,6 +90,7 @@ GEM
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
     concurrent-ruby (1.0.5)
+    concurrent-ruby (1.0.5-java)
     decent_exposure (3.0.0)
       activesupport (>= 4.0)
     devise (4.3.0)
@@ -98,6 +102,9 @@ GEM
     erubi (1.6.1)
     execjs (2.7.0)
     ffi (1.9.18)
+    ffi (1.9.18-java)
+    ffi (1.9.18-x64-mingw32)
+    ffi (1.9.18-x86-mingw32)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     globalid (0.4.0)
@@ -114,8 +121,7 @@ GEM
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    local_time (1.0.3)
-      coffee-rails
+    local_time (2.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.6)
@@ -128,11 +134,20 @@ GEM
     minitest (5.10.3)
     multi_json (1.12.1)
     nio4r (2.1.0)
+    nio4r (2.1.0-java)
     nokogiri (1.8.0)
+      mini_portile2 (~> 2.2.0)
+    nokogiri (1.8.0-java)
+    nokogiri (1.8.0-x64-mingw32)
+      mini_portile2 (~> 2.2.0)
+    nokogiri (1.8.0-x86-mingw32)
       mini_portile2 (~> 2.2.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    pg (0.21.0-x64-mingw32)
+    pg (0.21.0-x86-mingw32)
     puma (3.9.1)
+    puma (3.9.1-java)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -187,12 +202,15 @@ GEM
       sprockets (>= 3.0.0)
     thor (0.19.4)
     thread_safe (0.3.6)
+    thread_safe (0.3.6-java)
     tilt (2.0.8)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2017.2)
+      tzinfo (>= 1.0.0)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
@@ -204,10 +222,16 @@ GEM
       railties (>= 5.0)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
+    websocket-driver (0.6.5-java)
+      websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
 
 PLATFORMS
+  java
   ruby
+  x64-mingw32
+  x86-mingw32
+  x86-mswin32
 
 DEPENDENCIES
   bootstrap-sass
