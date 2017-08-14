@@ -1,0 +1,16 @@
+<div class="col-lg-3">
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <span class="label label-<%= success ? 'primary' : 'danger' %> pull-right"><%= "#{duration}ly" %></span>
+      <h5><%= success == true ? 'Income' : 'Expense' %></h5>
+    </div>
+    <div class="ibox-content">
+      <h1 class="no-margins"><%= money_format(amount) %></h1>
+      <div class="stat-percent font-bold text-success">
+        <small>Base on last <%= duration.downcase %> : </small>
+        <%= percent = compare_with_previous(amount, amount2) %>%
+        <i class="fa <%= percent.positive? ? 'fa-arrow-up fa-green' : 'fa-arrow-down fa-danger' %>"></i>
+      </div>      
+    </div>
+  </div>
+</div>
