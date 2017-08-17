@@ -3,47 +3,37 @@
     <div class="ibox float-e-margins">      
       <div>
         <span class="pull-right text-right">
-          <small>Average value of sales in the past month in </small>
+          <small>Average value of monthly expenses </small>
           <br/>
-          All sales: 162,862
+          <%= money_format((@current_year_total_expense/12).round(2))%>
         </span>
-        <h1 class="m-b-xs"><%= money_format(@current_year_total_income)%></h1>
+        <h1 class="m-b-xs"><%= money_format((@current_year_total_income/12).round(2))%></h1>
         <h3 class="font-bold no-margins">
-          Yearly Income
+          Avg. Month Income
         </h3>        
       </div>
       <div>
-        <canvas id="lineChart2" height="100"></canvas>
-      </div>
-      <div class="m-t-md">
-        <small class="pull-right">
-          <i class="fa fa-clock-o"> </i>
-          Update on 16.07.2015
-        </small>
-        <small>
-          <strong>Analysis of sales:</strong> The value has been changed over time, and last month reached a level over $50,000.
-        </small>
+        <canvas id="monthlyIncomeExpenseChart" height="100"></canvas>      
+        <script type="text/javascript">
+          var expense_data = <%= raw @current_year_expense_month_wise.values.map{|t| t.to_f }%>
+          var income_data = <%= raw @current_year_income_month_wise.values.map{|t| t.to_f}%>
+          monthly_income_expense_graph(income_data, expense_data);
+        </script>
       </div>
     </div>
   </div>
+
   <div class="col-md-4">
-    <div class="statistic-box">
-      <h4>Project Beta progress</h4>
-      <p>You have two project with not compleated task.</p>
-      <div class="row text-center">
-        <div class="col-lg-6">
-          <canvas id="doughnutChart2" width="80" height="80" style="margin: 18px auto 0"></canvas>
-          <h5>Kolter</h5>
-        </div>
-        <div class="col-lg-6">
-          <canvas id="doughnutChart" width="80" height="80" style="margin: 18px auto 0"></canvas>
-          <h5 >Maxtor</h5>
-        </div>
-      </div>
-      <div class="m-t">
-        <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
-      </div>
-    </div>
+    <h3>Top 5 Expenses for <%= Date::MONTHNAMES[Date.today.month] %></h3>
+    <small>You have <%= @total_no_of_expense_record %> expense(s) and <%= @total_no_of_income_record %> income(s).</small>
+    <ul class="list-group clear-list m-t">
+      <% @top_6_expenses.each_with_index do |expense, index| %>
+        <li class="list-group-item fist-item">
+          <span class="pull-right"><%= money_format(expense.amount) %></span>
+          <span class="label label-danger"><%= index+1 %></span> <%= expense.description %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
 
