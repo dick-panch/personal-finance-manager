@@ -26,21 +26,21 @@
                 </tr>
               </thead>
               <tbody>
+                <% @results.each do |category, transactions| %>
+                  <tr>
+                    <td><%= category.name %></td>                    
+                    <% (1..12).to_a.each do |month| %>
+                      <td><%= money_format(transactions[month].present? ? transactions[month].to_f : 0.0) %></td>
+                    <% end %>
+                    <td><strong><%= money_format(transactions['total']) %></strong></td>
+                  </tr>
+                <% end %>
                 <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td><strong>Total</strong></td>
+                  <% (1..12).to_a.each do |month| %>
+                    <td><strong><%= money_format(@totals[month].present? ? @totals[month] : 0.0) %></strong></td>
+                  <% end %>
+                  <td><strong><%= money_format(@totals.values.sum) %></strong></td>
                 </tr>
               </tbody>
             </table>

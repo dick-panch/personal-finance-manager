@@ -33,15 +33,24 @@ class TransactionsController < ApplicationController
 	end
 
 	def monthly_expenses
+		add_breadcrumb 'Monthly Expenses'
 	end
 
 	def monthly_incomes
+		add_breadcrumb 'Monthly Incomes'
 	end
 
 	def yearly_expenses
+		add_breadcrumb 'Yearly Expenses'
+		@report = YearlyExpenses.new(current_user)
+		@report.exec
+    @report.send('get_instance_variable'.to_sym).each do |k, v|
+      instance_variable_set("@#{k}", v)
+    end
 	end
 
 	def yearly_incomes
+		add_breadcrumb 'Yearly Incomes'
 	end
 
 	private
