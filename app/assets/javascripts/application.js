@@ -14,35 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require theme/bootstrap.min.js
-//= require theme/jquery.metisMenu.js
-//= require theme/jquery.slimscroll.min.js
-// Flot Graph
-//= require theme/flot/jquery.flot.js
-//= require theme/flot/jquery.flot.tooltip.min.js
-//= require theme/flot/jquery.flot.spline.js
-//= require theme/flot/jquery.flot.resize.js
-//= require theme/flot/jquery.flot.pie.js
-//= require theme/jquery.peity.min.js
-//= require theme/peity-demo.js
-//= require theme/inspinia.js
-//= require theme/pace.min.js
-//= require theme/jquery-ui.min.js
-//= require theme/jquery.gritter.min.js
-//= require theme/jquery.sparkline.min.js
-//= require theme/sparkline-demo.js
+
 //= require theme/Chart.min.js
-//= require theme/toastr.min.js
-//= require theme/icheck.min.js
-//= require jquery.validate
-//= require local-time
-//= require theme/bootstrap-datepicker.js
-//= require theme/chosen.jquery.js
-//= require theme/select2.full.min.js
-
-// For Table
-//= require theme/datatables.min.js
-
-// Extra JS
 //= require theme/dashboard.js
-//= require admin/categories.js
-//= require transactions.js
