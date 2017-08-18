@@ -5,6 +5,9 @@
       <%= render_breadcrumbs tag: :li %>
     </ol>    
   </div>
+  <div class="col-lg-2 pull-right mrgtop30">
+    <%= select_tag :year, options_for_select(@years, params[:year].present? ? params[:year] : Date.today.year), class: 'form-control loader-display', onchange: "window.location.href='/transactions/yearly-expenses/?year='+$(this).val()" %>
+  </div>
 </div>
 
 <div class='wrapper wrapper-content animated fadeInRight'>

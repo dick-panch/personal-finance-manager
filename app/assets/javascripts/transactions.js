@@ -57,3 +57,11 @@ $("#type_id").change(function(event){
 	var type_id = $(this).val();
 	window.location.href = '/transactions?year='+year+'&month='+month+'&type_id='+type_id
 })
+
+// For Loader
+$(document).ready(function() {
+	$('.loader-display').on('click', function() {
+		$('.loader-overlay').addClass('in').show();
+		$('.loader-shell').css('height', '100vh');
+	})
+});

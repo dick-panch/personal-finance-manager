@@ -32,6 +32,9 @@
           toastr['<%= type %>']('<%= f[1] %>');
         <% end %>
       </script>
-    <% end %>      
+    <% end %>
+    <div class="modal-backdrop fade loader-overlay" style="display: none;">
+      <%= render 'layouts/loader', initial_shown: true %>
+    </div>        
 	</body>
 </html>

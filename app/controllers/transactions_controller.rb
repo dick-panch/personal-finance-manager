@@ -42,7 +42,7 @@ class TransactionsController < ApplicationController
 
 	def yearly_expenses
 		add_breadcrumb 'Yearly Expenses'
-		@report = YearlyExpenses.new(current_user)
+		@report = YearlyExpensesAndIncomes.new(current_user, 1, params[:year])
 		@report.exec
     @report.send('get_instance_variable'.to_sym).each do |k, v|
       instance_variable_set("@#{k}", v)
@@ -51,6 +51,11 @@ class TransactionsController < ApplicationController
 
 	def yearly_incomes
 		add_breadcrumb 'Yearly Incomes'
+		@report = YearlyExpensesAndIncomes.new(current_user, 2, params[:year])
+		@report.exec
+    @report.send('get_instance_variable'.to_sym).each do |k, v|
+      instance_variable_set("@#{k}", v)
+    end		
 	end
 
 	private

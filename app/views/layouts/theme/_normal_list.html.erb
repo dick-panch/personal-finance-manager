@@ -15,16 +15,16 @@
     	<%= link_to 'Generals', transactions_url %>    	
     </li>
     <li class="<%= 'active' if controller.action_name == 'monthly_expenses' %>">
-    	<%= link_to 'Monthly Expenses', monthly_expenses_transactions_url %>    		
+    	<%= link_to 'Monthly Expenses', monthly_expenses_transactions_url, class: 'loader-display' %>    		
     </li>
     <li class="<%= 'active' if controller.action_name == 'monthly_incomes' %>">
-    	<%= link_to 'Monthly Incomes', monthly_incomes_transactions_url %>    		
+    	<%= link_to 'Monthly Incomes', monthly_incomes_transactions_url, class: 'loader-display' %>    		
     </li>
     <li class="<%= 'active' if controller.action_name == 'yearly_expenses' %>">
-      <%= link_to 'Yearly Expenses', yearly_expenses_transactions_url %>        
+      <%= link_to 'Yearly Expenses', yearly_expenses_transactions_url, class: 'loader-display' %>        
     </li>
     <li class="<%= 'active' if controller.action_name == 'yearly_incomes' %>">
-      <%= link_to 'Yearly Incomes', yearly_incomes_transactions_url %>        
+      <%= link_to 'Yearly Incomes', yearly_incomes_transactions_url, class: 'loader-display' %>        
     </li>    
   </ul>
 </li>

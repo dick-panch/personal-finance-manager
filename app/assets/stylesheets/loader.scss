@@ -1,0 +1,48 @@
+.loader-shell {
+  min-height: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;  
+  .loader-wrapper {
+    height: 40px;
+    width: 40px;
+    margin: 0 auto;
+    text-align: center;    
+    .loader {
+      -webkit-animation: spin 1.25s linear infinite;
+      animation: spin 1.25s linear infinite;
+      img {
+        width: 40px;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes spin {
+  0%   {
+    -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);  /* IE 9 */
+    transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    transform-origin: 50% 50%;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);  /* IE 9 */
+    transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    transform-origin: 50% 50%;
+  }
+}
+@keyframes spin {
+  0%   {
+    -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);  /* IE 9 */
+    transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    transform-origin: 50% 50%;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);  /* IE 9 */
+    transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    transform-origin: 50% 50%;
+  }
+}
