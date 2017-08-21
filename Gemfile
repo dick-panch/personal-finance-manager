@@ -78,3 +78,7 @@ gem 'local_time'
 # Nested Form
 gem "nested_form"
 gem 'paperclip', '~> 5.0.0'
+
+## DateRange
+gem "rails-bootstrap-daterangepicker"
+gem 'momentjs-rails'
