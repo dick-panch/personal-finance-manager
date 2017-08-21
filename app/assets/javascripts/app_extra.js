@@ -36,7 +36,8 @@
 //= require theme/chosen.jquery.js
 //= require theme/select2.full.min.js
 //= require moment
-//= require bootstrap-daterangepicker
+//= require theme/daterangepicker.js
+// require bootstrap-daterangepicker
 
 // For Table
 //= require theme/datatables.min.js
