@@ -24,9 +24,19 @@ Rails.application.routes.draw do
       get :monthly_expenses, path: 'monthly-expenses'
       get :monthly_incomes, path: 'monthly-incomes'
       get :yearly_expenses, path: 'yearly-expenses'
-      get :yearly_incomes, path: 'yearly-incomes'      
+      get :yearly_incomes, path: 'yearly-incomes'
+      post :import
     end
   end
+  
+  resources :accounts, only: [] do
+    collection do
+      get :profit_and_loss, path: 'profit-and-loss'
+      get :balance_sheet, path: 'balance-sheet'
+    end
+  end
+
+  resources :users, only: [:edit, :update]
   
   ## Admin Routes ------------------------------------------------------
   namespace :admin do

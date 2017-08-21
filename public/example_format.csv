@@ -1,0 +1,4 @@
+date,description,category,amount,is_income,payment_type
+27/2/2017,Dinner with Friends,Food and Drink,7500,0,Cash
+27/2/2017,Mobile Bill,Rent,2500,0,Net Banking
+10/2/2017,Salary From XZY Company,Income,25000,1,Net Banking

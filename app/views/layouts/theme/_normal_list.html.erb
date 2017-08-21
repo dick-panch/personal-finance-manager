@@ -26,5 +26,20 @@
     <li class="<%= 'active' if controller.action_name == 'yearly_incomes' %>">
       <%= link_to 'Yearly Incomes', yearly_incomes_transactions_url, class: 'loader-display' %>        
     </li>    
-  </ul>
+  </ul>  
+</li>
+<li class="<%= 'active' if controller.controller_name == 'accounts' %>">
+  <a href="javascript:void(0);">
+    <i class="fa fa-university"></i>
+    <span class="nav-label">Accounts</span>
+    <span class="fa arrow"></span>
+  </a>
+  <ul class="nav nav-second-level collapse" style="height: 0px;">
+    <li class="<%= 'active' if controller.action_name == 'profit_and_loss' %>">
+      <%= link_to 'Profit and Loss', profit_and_loss_accounts_url, class: 'loader-display' %>     
+    </li>
+    <li class="<%= 'active' if controller.action_name == 'balance_sheet' %>">
+      <%= link_to 'Balance Sheet', balance_sheet_accounts_url, class: 'loader-display' %>       
+    </li>
+  </ul>  
 </li>

@@ -1,0 +1,42 @@
+<div id="tab-1" class="tab-pane active">
+  <div class="sidebar-title">
+    <h3> <i class="fa fa-file-text"></i> Import CSV Data</h3>
+    <small><i class="fa fa-info-circle"></i> Upload CSV file to import transactions.</small>
+  </div>
+  <div>
+    <div class="sidebar-message">
+      <div class="media-body">
+       	<%= form_for Transaction.new, url: import_transactions_url, method: :post do |f| %>
+          <div class="form-group">            
+            <label>Upload File</label>
+            <%= f.file_field :file, class: 'form-control' %>
+          </div>          
+          <div class="form-group">
+            <%= submit_tag "Upload", name: nil, class: 'btn btn-primary btn-sm', data: {disable_with: 'Importing...' } %>            
+          </div>
+          <%= link_to 'Download Example Format', 'example_format.csv' %>      
+        <% end %>
+      </div>      
+    </div>
+
+    <ul class="sidebar-list">
+      <li class="pad020">
+        <h4>Notes for Import Transaction</h4>
+        All fields are require that given in the example csv. If any field is/are empty then that row will not imported in the transactions.
+      </li>
+      <li class="pad020">
+        For importing for transactions you have to follow some formats <br>
+        <b>1.</b> Header Name should not be change <br>
+        <b>2.</b> Date should be 'DD/MM/YYYY' format <br>
+        <b>3.</b> is_income field value should be 0 or 1. 0 for False and 1 for True. <br>
+        <b>4.</b> payment_type value are case sensitive. 
+      </li>
+      <li class="pad020">
+        <h4> List of Payment Type </h4>
+        <% Rails.application.secrets.payment_types.each do |k, v| %>
+          <b><%= k %>. </b> <%= v %><br>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>

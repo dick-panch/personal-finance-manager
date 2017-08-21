@@ -1,0 +1,36 @@
+<div class='row wrapper border-bottom white-bg page-heading'>
+  <div class='col-lg-10'>
+    <h2>Edit User Setting</h2>
+    <ol class='breadcrumb'>
+      <%= render_breadcrumbs tag: :li %>
+    </ol>    
+  </div>
+</div>
+
+<div class='wrapper wrapper-content animated fadeInRight'>
+  <div class='row'>
+    <div class='col-lg-8'>
+      <div class='ibox float-e-margins'>
+        <div class='ibox-content'>
+          <%= nested_form_for current_user, html: { method: :put, class: 'form-horizontal' } do |f| %>
+            <%= f.fields_for :setting, current_user.setting do |s| %>
+              <div class="form-group no-fg">
+                <%= s.label :financial_year, class: 'col-sm-3 control-label' %>
+                <div class='col-sm-8'>                  
+                  <%= s.select :financial_year, options_for_select(Rails.application.secrets.financial_years.invert.to_a, s.object.financial_year), {include_blank: false}, {class: 'form-control'} %>
+                </div>
+              </div>              
+            <% end %>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+              <div class="col-sm-8 col-sm-offset-3">
+                <%= link_to 'Cancel', dashboard_url, class: 'btn btn-white', data: {disable_with: 'Please Wait...'} %>
+                <%= f.submit "Update", class: 'btn btn-primary', data: {disable_with: 'Please Wait...' } %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

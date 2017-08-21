@@ -5,7 +5,7 @@ class TransactionsController < ApplicationController
 	expose :transaction, find_by: :slug
 	expose :income_categories, -> { Category.where('(user_id IS NULL and category_type_id = ?) or user_id = ?', 2, current_user.id) }
 	expose :expense_categories, -> { Category.where('(user_id IS NULL and category_type_id = ?) or user_id = ?', 1, current_user.id) }
-	expose :type, -> { find_transaction_type }
+	expose :type, -> { find_transaction_type }	
 
 	add_breadcrumb 'Home', :dashboard_url, title: 'Back to Dashboard Page'
 	add_breadcrumb 'Transactions', :transactions_url, title: 'Back to the transactions'
@@ -56,6 +56,11 @@ class TransactionsController < ApplicationController
     @report.send('get_instance_variable'.to_sym).each do |k, v|
       instance_variable_set("@#{k}", v)
     end		
+	end
+
+	def import		
+		result = Transaction.import(params[:transaction]['file'], current_user)
+		redirect_to dashboard_url, flash: result
 	end
 
 	private
