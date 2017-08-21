@@ -8,80 +8,29 @@
 </div>
 
 <div class='wrapper wrapper-content animated fadeInRight'>
+  <%= render 'accounts/filters' %>
+  
   <div class='row'>
     <div class='col-lg-12'>
 
       <div class='ibox float-e-margins'>
 
 				<div class="ibox-title">
-        	<h5 class="text-center">For the month of <%= @month %> <%= @year %> </h5>
+        	<h5 class="text-center"><%= display_header_for_profit_and_loss_statement(params) %></h5>
         </div>
 
         <div class='ibox-content'>
 
-        
 					<table class="table table-bordered">
             <!--  INCOME SECTION -->
-            <thead>
-              <tr>
-                <th>Incomes</th>
-	              <th class="col-sm-3"><%= rupee_sign('Amount') %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% if @incomes.present? %>
-                <% @incomes.each do |income| %>
-                  <tr>
-                    <td><%= income.description %></td>
-                    <td class=""><%= money_format(income.amount) %></td>
-                  </tr>
-                <% end %>                  
-              <% else %>
-                <tr>
-                  <td> No Income Found </td>
-                  <td></td>
-                </tr>
-              <% end %>
-              <tr><td></td><td></td></tr>
-              <tr>
-                <td><strong> TOTAL INCOME </strong></td>
-                <td class="text-right"><strong><%= money_format(total_income(@incomes)) %></strong></td>
-              </tr>
-            </tbody>
+            <%= render '/accounts/statement', obj: @incomes, type: 'Incomes' %>
             <!-- EXPENSES SECTION -->
-            <thead>
-              <tr>
-                <th>Expenses</th>
-                <th class="col-sm-3"><%= rupee_sign('Amount') %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% if @expenses.present? %>
-                <% @expenses.each do |category, expenses| %>
-                  <tr>
-                    <td><%= category %></td>
-                    <td><%= money_format(expenses.map{|t| t.amount}.sum) %></td>
-                  </tr>
-                <% end %>
-              <% else %>
-                <tr>
-                  <td>No Expense Found </td><td></td>
-                </tr>
-              <% end %>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-              <tr>
-                <td><strong> TOTAL EXPENSES </strong></td>
-                <td class="text-right"><strong><%= money_format(total_expenses(@expenses)) %></strong></td>
-              </tr>
-            </tbody>
+            <%= render '/accounts/statement', obj: @expenses, type: 'Expenses' %>
             <!-- PROFIT AND LOSS STATEMENT -->
             <thead>
               <tr>
                 <th>PROFIT / LOSS</th>
-                <th class="col-sm-3 text-right <%= profit_or_loss_amount(total_income(@incomes), total_expenses(@expenses)).positive? ? 'text-navy' : 'text-danger' %>"><%= display_profit_and_loss_amount(@incomes, @expenses) %></th>
+                <th class="col-sm-3 text-right <%= profit_or_loss_amount(total_expenses_or_income(@incomes), total_expenses_or_income(@expenses)).positive? ? 'text-navy' : 'text-danger' %>"><%= display_profit_and_loss_amount(@incomes, @expenses) %></th>
               </tr>
             </thead>
           </table>

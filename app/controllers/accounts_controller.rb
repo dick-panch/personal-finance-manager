@@ -5,10 +5,14 @@ class AccountsController < ApplicationController
 
 	def profit_and_loss
 		add_breadcrumb 'Profit and Loss'
-		params[:period_type] = 'monthly'		
+		
+		params[:period_type] = 'monthly' unless params[:period_type].present?
+		params[:month] = Date.today.month unless params[:month].present?
+		params[:year]  = Date.today.year unless params[:year].present?
+
 		@profit_and_loss = ProfitAndLossAccount.new(current_user, params)
 		@profit_and_loss.exec
-    @profit_and_loss.send("get_instance_variable_for_#{params[:period_type].downcase}".to_sym).each do |k, v|
+    @profit_and_loss.send('get_instance_variable').each do |k, v|
       instance_variable_set("@#{k}", v)
     end				
 	end

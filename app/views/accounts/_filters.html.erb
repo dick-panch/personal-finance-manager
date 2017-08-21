@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Filter for Profit and Loss Statement</h5>
+        <div class="ibox-tools">
+          <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+        </div>
+      </div>
+      <div class="ibox-content" style="display: block;">
+        <form role="form" class="form-inline">
+        <%= form_tag profit_and_loss_accounts_url, method: :get, class: 'form-inline' do %>
+          <div class="form-group">
+            <label class="sr-only">Period Type</label>
+            <%= select_tag 'period_type', options_for_select([ 
+              ['Monthly', 'monthly'], 
+              ['Quarterly', 'quarterly'], 
+              ['Yearly', 'yearly'], 
+              ['Custom', 'custom'] 
+            ], params[:period_type]), class: 'form-control', id: 'profit_and_loss_statement_period_type' %>
+          </div>
+          
+          <div class="form-group <%= params[:period_type] == 'monthly' ? '' : 'hide' %> profit-and-loss-statement-month">
+            <label class="sr-only">Month</label>
+            <%= select_tag 'month', options_for_select([ 
+              [Date::MONTHNAMES[1], 1],
+              [Date::MONTHNAMES[2], 2], 
+              [Date::MONTHNAMES[3], 3], 
+              [Date::MONTHNAMES[4], 4], 
+              [Date::MONTHNAMES[5], 5], 
+              [Date::MONTHNAMES[6], 6], 
+              [Date::MONTHNAMES[7], 7], 
+              [Date::MONTHNAMES[8], 8], 
+              [Date::MONTHNAMES[9], 9], 
+              [Date::MONTHNAMES[10], 10], 
+              [Date::MONTHNAMES[11], 11], 
+              [Date::MONTHNAMES[12], 12], 
+              ], params[:month]), class: 'form-control' %>
+          </div>          
+          <div class="form-group <%= params[:period_type] == 'quarterly' ? '' : 'hide' %> profit-and-loss-statement-quarter">
+            <label class="sr-only">Quarter</label>
+            <%= select_tag 'quarter', options_for_select([
+              ['1st Quater', 1],
+              ['2nd Quater', 2],
+              ['3rd Quater', 3],
+              ['4th Quater', 4]
+              ], params[:quarter]), class: 'form-control' %>
+          </div>
+          
+          <div class="form-group <%= params[:period_type] == 'custom' ? '' : 'hide' %> profit-and-loss-statement-daterange">
+            <label class="sr-only">From Date</label>            
+            <div class="input-group date">
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+              <%= text_field_tag 'daterange', params[:daterange], class: 'form-control', placeholder: 'Date Range' %>
+            </div>
+          </div>          
+
+          <div class="form-group profit-and-loss-statement-year <%= params[:period_type] == 'custom' ? 'hide' : '' %>">
+            <label class="sr-only">Year</label>
+            <%= select_tag 'year', options_for_select(@years, params[:year]), class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= submit_tag "Search", name: nil, class: 'btn btn-primary btn-inline', data: {disable_with: 'Searching...'} %>
+          </div>          
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

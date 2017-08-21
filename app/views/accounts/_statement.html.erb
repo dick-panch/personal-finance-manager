@@ -1,0 +1,28 @@
+<thead>
+  <tr>
+    <th><%= type %></th>
+    <th class="col-sm-3"><%= rupee_sign('Amount') %></th>
+  </tr>
+</thead>
+<tbody>
+  <% if obj.present? %>
+    <% obj.each do |category, records| %>
+      <tr>
+        <td><%= category %></td>
+        <td><%= money_format(records.map{|t| t.amount}.sum) %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr>
+      <td>No <%= type %> Found </td><td></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong> TOTAL <%= type.upcase %> </strong></td>
+    <td class="text-right"><strong><%= money_format(total_expenses_or_income(obj)) %></strong></td>
+  </tr>
+</tbody>
