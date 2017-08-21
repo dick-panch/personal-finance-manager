@@ -74,3 +74,7 @@ gem 'friendly_id', '~> 5.1.0'
 
 # Local Time
 gem 'local_time'
+
+# Nested Form
+gem "nested_form"
+gem 'paperclip', '~> 5.0.0'
