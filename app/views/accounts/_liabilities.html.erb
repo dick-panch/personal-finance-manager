@@ -1,0 +1,42 @@
+<table class="table table-bordered">
+  <thead>
+    <th>Liabilities</th>
+    <th class="col-sm-4 col-xs-3 col-md-4">Amount</th>
+  </thead>
+  <tbody>
+    <% if @expenses.present? %>
+      <tr>
+        <td colspan="2"><b>Category</b></td>
+      </tr>
+      <% @expenses.each do |category, transactions| %>
+        <tr class='sub-tr-first-td'>
+          <td><%= category %></td>
+          <td><span class="pull-right">
+            <%= money_format(transactions.flatten.map{|t| t.amount}.sum) %>
+          </span></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td><b>Category Expenses Total</b></td>
+        <td><b class="pull-right"><%= money_format(@expenses.values.flatten.map{|t| t.amount}.sum) %></b></td>
+      </tr>
+      <tr>
+        <td>Total Capital</td>
+        <td><span class="pull-right">
+          <%= money_format(@incomes.values.flatten.map{|t| t.amount}.sum - @expenses.values.flatten.map{|t| t.amount}.sum) %>
+        </span></td>
+      </tr>
+      <tr>
+        <td><b class="capital">Total Liabilities & Capital</b></td>
+        <td><span class="pull-right">
+          <b><%= money_format(@incomes.values.flatten.map{|t| t.amount}.sum) %></b>
+        </span></td>
+      </tr>      
+    <% else %>
+      <tr>
+        <td>No Expenses Found</td>
+        <td></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

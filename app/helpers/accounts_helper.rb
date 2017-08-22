@@ -14,8 +14,8 @@ module AccountsHelper
 	def display_profit_and_loss_amount(incomes=0, expenses=0)
 		total_income 		= total_expenses_or_income(incomes)
 		total_expenses 	= total_expenses_or_income(expenses)
-		diff 						= profit_or_loss_amount(total_income, total_expenses)
-		return diff.positive? ? diff.round(2) : "(#{diff.round(2)})"
+		diff 						= profit_or_loss_amount(total_income, total_expenses)		
+		return diff.positive? ? money_format(diff.round(2)) : "(#{money_format(diff.round(2))})"
 	end
 
 	def profit_or_loss_amount(income=0, expenses=0)

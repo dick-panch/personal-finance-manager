@@ -5,11 +5,36 @@
       <%= render_breadcrumbs tag: :li %>
     </ol>    
   </div>
+  <div class="col-lg-2 pull-right mrgtop30">
+    <%= select_tag :year, options_for_select(@years, params[:year].present? ? params[:year] : Date.today.year), class: 'form-control', onchange: "window.location.href='/accounts/balance-sheet/?year='+$(this).val()" %>
+  </div>  
 </div>
 
 <div class='wrapper wrapper-content animated fadeInRight'>
   <div class='row'>
     <div class='col-lg-12'>
+
+      <div class='ibox float-e-margins'>
+
+        <div class="ibox-title">
+          <h5 class="text-center">
+            Balance Sheet As On 31st March, <%= params[:year] %>
+          </h5>
+        </div>
+
+        <div class='ibox-content'>
+          <div class="col-lg-6 pad0">
+            <!-- Assets -->
+            <%= render '/accounts/assets' %>
+          </div>
+          <div class="col-lg-6 pad0">
+            <!-- Liabilities / Expenses -->
+            <%= render '/accounts/liabilities' %>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

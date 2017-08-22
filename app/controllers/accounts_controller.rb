@@ -19,5 +19,11 @@ class AccountsController < ApplicationController
 
 	def balance_sheet
 		add_breadcrumb 'Balance Sheet'
+		params[:year] = Date.today.year unless params[:year].present?
+		balance_sheet = BalanceSheet.new(current_user, params[:year])
+		balance_sheet.exec
+		balance_sheet.send('get_instance_variable').each do |k, v|
+      instance_variable_set("@#{k}", v)
+    end
 	end
 end
