@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/dick-panch/finance-manager.git
-  revision: 0be7e16badb99740322afc51bbb8fa7ea517fae0
+  revision: bc0805763d5fa9eb3c3bd5ee04173cdf9ba0f5c2
   specs:
     finance_manager (0.1.0)
       devise (= 4.3.0)
@@ -279,4 +279,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
