@@ -25,7 +25,7 @@
     </li>
     <li class="<%= 'active' if controller.action_name == 'yearly_incomes' %>">
       <%= link_to 'Yearly Incomes', yearly_incomes_transactions_url, class: 'loader-display' %>        
-    </li>    
+    </li>
   </ul>  
 </li>
 <li class="<%= 'active' if controller.controller_name == 'accounts' %>">
@@ -42,4 +42,11 @@
       <%= link_to 'Balance Sheet', balance_sheet_accounts_url, class: 'loader-display' %>       
     </li>
   </ul>  
+</li>
+
+<li class="<%= 'active' if controller.controller_name == 'reports' %>">
+  <%= link_to reports_url do %>
+    <i class="fa fa-bar-chart"></i>
+    <span class="nav-label">Reports</span>
+  <% end %>            
 </li>

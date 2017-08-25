@@ -37,6 +37,11 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:edit, :update]
+  resources :reports, only: [:index] do
+    collection do
+      
+    end
+  end
   
   ## Admin Routes ------------------------------------------------------
   namespace :admin do

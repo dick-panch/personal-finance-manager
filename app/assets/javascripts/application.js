@@ -17,3 +17,4 @@
 
 //= require theme/Chart.min.js
 //= require theme/dashboard.js
+//= require theme/reports.js
