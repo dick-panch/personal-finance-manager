@@ -100,10 +100,10 @@ $(document).ready(function () {
     // Uncomment on server mode to enable XHR calls
 
     // Minimalize menu
-    $('.navbar-minimalize').on('click', function () {
+    $('.navbar-minimalize').on('click', function (event) {
         $("body").toggleClass("mini-navbar");
         SmoothlyMenu();
-
+        event.stopPropagation()
     });
 
     // Tooltips demo
