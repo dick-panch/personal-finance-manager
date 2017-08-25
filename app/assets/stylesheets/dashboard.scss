@@ -15,3 +15,97 @@
 .mrgtop30{
 	margin-top: 30px;
 }
+.dashboard{
+	.chart-list {
+    margin: 0;
+    padding: 0;
+    
+		li::before {
+	    background-color: #ccc;
+	    border-radius: 3px;
+	    content: " ";
+	    display: block;
+	    height: 11px;
+	    left: 0;
+	    position: absolute;
+	    top: 2px;
+	    width: 11px;
+		}
+		li::after {
+    	clear: both;
+    	content: " ";
+    	display: block;
+		}		
+		li {
+    	font-size: 12px;
+    	margin-bottom: 13px;
+			font-weight: bold;
+    	line-height: 15px;
+    	list-style: outside none none;
+			padding-left: 15px;
+    	position: relative;
+    	text-align: left;    	
+		}
+		.color8 {
+		    color: #1B2631;
+		}
+    li.color8::before {
+   	  background-color: #1B2631;
+		}
+		.color1{
+		    color: #D6DBDF;
+		}
+    li.color1::before {
+   	  background-color: #D6DBDF;
+		}
+		.color2{
+		    color: #AEB6BF;
+		}
+    li.color2::before {
+   	  background-color: #AEB6BF;
+		}
+		.color3{
+		    color: #85929E;
+		}
+    li.color3::before {
+   	  background-color: #85929E;
+		}
+		.color4{
+		    color: #5D6D7E;
+		}
+    li.color4::before {
+   	  background-color: #5D6D7E;
+		}
+		.color5{
+		    color: #34495E;
+		}
+    li.color5::before {
+   	  background-color: #34495E;
+		}
+		.color6{
+		    color: #2E4053;
+		}
+    li.color6::before {
+   	  background-color: #2E4053;
+		}
+		.color7{
+		    color: #1B2631;
+		}
+    li.color7::before {
+   	  background-color: #1B2631;
+		}
+		li font {
+	    width: calc(100% - 42px);
+			display: block;
+	    float: left;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;		    
+		}
+		li span {
+		  color: #7d7d7d;
+		  display: block;
+		  float: right;
+		}		
+	}	
+}

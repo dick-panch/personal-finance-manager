@@ -82,3 +82,6 @@ gem 'paperclip', '~> 5.0.0'
 ## DateRange
 gem "rails-bootstrap-daterangepicker"
 gem 'momentjs-rails'
+
+## Gon
+gem 'gon'
