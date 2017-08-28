@@ -11,9 +11,11 @@ class ReportsController < ApplicationController
       instance_variable_set("@#{k}", v)
     end
 
+    logger.warn("===@incomes====#{@incomes.inspect}===================")
+
     gon.incomes = @incomes.values
     gon.expenses = @expenses.values
-    
+		logger.warn("===@expenses====#{@expenses.inspect}===================")    
 	end
 
 end
