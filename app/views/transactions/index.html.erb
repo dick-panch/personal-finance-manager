@@ -21,7 +21,7 @@
           <div class="col-sm-2 month-dropdown">
             <%= select_tag :type_id, options_for_select(Rails.application.secrets.transaction_types.invert.to_a, params[:type_id]), {include_blank: 'Select Type', class: 'form-control'} %>
           </div>
-          <div class="ibox-tools">
+          <div class="ibox-tools pull-right">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
               <i class="fa fa-wrench"></i>
             </a>

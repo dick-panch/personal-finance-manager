@@ -23,8 +23,12 @@ Rails.application.routes.draw do
     collection do
       get :monthly_expenses, path: 'monthly-expenses'
       get :monthly_incomes, path: 'monthly-incomes'
+      get :monthly_investments, path: 'monthly-investments'
+
       get :yearly_expenses, path: 'yearly-expenses'
       get :yearly_incomes, path: 'yearly-incomes'
+      get :yearly_investments, path: 'yearly-investments'
+
       post :import
     end
   end

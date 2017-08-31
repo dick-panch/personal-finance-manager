@@ -1,0 +1,25 @@
+<div class="row">
+  <div class='col-lg-12'>
+    <div class="wizard">
+      <div class="steps">
+        <ul>
+          <li class="first <%= controller.action_name == 'yearly_incomes' ? 'current' : 'disabled'%>">
+            <%= link_to yearly_incomes_transactions_url(year: params[:year]) do %>                
+              <strong> YEARLY INCOMES</strong>
+            <% end %>
+          </li>
+          <li class="<%= controller.action_name == 'yearly_expenses' ? 'current' : 'disabled'%>">
+            <%= link_to yearly_expenses_transactions_url(year: params[:year]) do %>                
+              <strong> YEARLY EXPENSES</strong>
+            <% end %>
+          </li>            
+          <li class="last <%= controller.action_name == 'yearly_investments' ? 'current' : 'disabled'%>">
+            <%= link_to yearly_investments_transactions_url(year: params[:year]) do %>                
+              <strong> YEARLY INVESTMENT</strong>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

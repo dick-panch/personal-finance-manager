@@ -1,6 +1,6 @@
 <div class='row wrapper border-bottom white-bg page-heading'>
   <div class='col-lg-8'>
-    <h2>Monthly Expenses Transaction Summary</h2>
+    <h2>Monthly Investments Transaction Summary</h2>
     <ol class='breadcrumb'>
       <%= render_breadcrumbs tag: :li %>
     </ol>    
@@ -13,7 +13,7 @@
     <div class='col-lg-12'>
       <div class='ibox float-e-margins'>
         <div class="ibox-title">
-          <%= form_tag monthly_expenses_transactions_url, method: :get do %>
+          <%= form_tag monthly_investments_transactions_url, method: :get do %>
             <div class="col-sm-2 month-dropdown">
               <%= select_tag :month, options_for_select( (1..12).to_a.map{|month| [Date::MONTHNAMES[month], month]}, params[:month].present? ? params[:month].to_i : Date.today.month), class: 'form-control' %>
             </div>
@@ -27,7 +27,7 @@
         </div>      
         <div class='ibox-content'>
           <div class='table-responsive'>
-            <% if transactions.expenses.present? %>  
+            <% if transactions.investments.present? %>  
               <table class='table table-hover' >
                 <thead>
                   <tr>                  
@@ -41,10 +41,10 @@
                 <tbody>
                   <tr>
                     <td colspan="2"></td>
-                    <td colspan="2" class="text-center"><strong>Total Expenses</strong></td>
-                    <td><strong><%= money_format(transactions.expenses.map(&:amount).sum()) %></strong></td>
+                    <td colspan="2" class="text-center"><strong>Total Investments</strong></td>
+                    <td><strong><%= money_format(transactions.investments.map(&:amount).sum()) %></strong></td>
                   </tr>
-                  <% transactions.expenses.group_by{|t| t.transaction_date}.each do |key, values| %>
+                  <% transactions.investments.group_by{|t| t.transaction_date}.each do |key, values| %>
                     <tr>
                       <td colspan="5"><strong><%= local_date(key) %></strong></td>
                     </tr>
@@ -61,6 +61,11 @@
                       <td colspan="3"></td>
                       <td><strong>Total</strong></td>
                       <td><strong><%= money_format(values.map(&:amount).sum) %></strong></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2"></td>
+                      <td colspan="2" class="text-center"><strong>Total Investments</strong></td>
+                      <td><strong><%= money_format(transactions.investments.map(&:amount).sum()) %></strong></td>
                     </tr>
                   <% end %>
                 </tbody>

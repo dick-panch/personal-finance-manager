@@ -1,0 +1,25 @@
+  <div class="row">
+    <div class='col-lg-12'>
+      <div class="wizard">
+        <div class="steps">
+          <ul>
+            <li class="first <%= controller.action_name == 'monthly_incomes' ? 'current' : 'disabled'%>">
+              <%= link_to monthly_incomes_transactions_url do %>                
+                <strong> MONTHLY INCOMES</strong>
+              <% end %>
+            </li>
+            <li class="<%= controller.action_name == 'monthly_expenses' ? 'current' : 'disabled'%>">
+              <%= link_to monthly_expenses_transactions_url do %>                
+                <strong> MONTHLY EXPENSES</strong>
+              <% end %>
+            </li>            
+            <li class="last <%= controller.action_name == 'monthly_investments' ? 'current' : 'disabled'%>">
+              <%= link_to monthly_investments_transactions_url do %>                
+                <strong> MONTHLY INVESTMENT</strong>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
