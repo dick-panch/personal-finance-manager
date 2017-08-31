@@ -9,4 +9,15 @@ module DashboardHelper
 		current += current[0..6].reverse
 		return current[0..number]
 	end
+
+	def category_type_label(label)
+		case label
+		when 'income'
+			return 'primary'
+		when 'expense'
+			return 'danger'
+		when 'investment'
+			return 'info'
+		end
+	end
 end

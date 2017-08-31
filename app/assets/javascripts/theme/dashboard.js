@@ -38,6 +38,38 @@ function monthly_income_expense_graph(income_data, expense_data){
   new Chart(ctx, {type: 'line', data: lineData, options:lineOptions});
 }
 
+function categorize_monthly_investments_chart(){
+  var doughnutData = {
+    labels: gon.investments_categories_list,
+    datasets: [{
+      data: gon.percent_of_investment_categories,
+      backgroundColor: gon.background_colors
+    }],                
+  } ;
+  var doughnutOptions = {
+    responsive: true,
+    legend: false,
+    animation: {
+        animateScale: true,
+        animateRotate: true
+    },
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {          
+          var dataset = data.datasets[tooltipItem.datasetIndex];
+          var currentValue = dataset.data[tooltipItem.index];
+          var label = data.labels[tooltipItem.index]
+          return label + ' ' + currentValue + '%';
+        }
+      }
+    }          
+
+  };
+  var ctx4 = document.getElementById("categorize_monthly_investments_chart").getContext("2d");
+  ctx4.canvas.width = 100;              
+  new Chart(ctx4, {type: 'doughnut', data: doughnutData, options:doughnutOptions});  
+}
+
 function categorize_monthly_expenses_chart(){
   var doughnutData = {
     labels: gon.expenses_categories_list,

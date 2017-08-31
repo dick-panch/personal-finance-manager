@@ -10,12 +10,9 @@ class ReportsController < ApplicationController
     report.send('get_instance_variable'.to_sym).each do |k, v|
       instance_variable_set("@#{k}", v)
     end
-
-    logger.warn("===@incomes====#{@incomes.inspect}===================")
-
-    gon.incomes = @incomes.values
-    gon.expenses = @expenses.values
-		logger.warn("===@expenses====#{@expenses.inspect}===================")    
+    gon.incomes  		= @incomes.values
+    gon.expenses 		= @expenses.values
+    gon.my_balances = @my_balances.values
 	end
 
 end

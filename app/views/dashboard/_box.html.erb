@@ -1,8 +1,8 @@
-<div class="col-lg-3">
+<div class="col-lg-4">
   <div class="ibox float-e-margins">
     <div class="ibox-title">
-      <span class="label label-<%= success ? 'primary' : 'danger' %> pull-right"><%= "#{duration}ly" %></span>
-      <h5><%= success == true ? 'Income' : 'Expense' %></h5>
+      <span class="label label-<%= category_type_label(category_type) %> pull-right"><%= "#{duration}ly" %></span>
+      <h5><%= category_type.capitalize %></h5>
     </div>
     <div class="ibox-content">
       <h1 class="no-margins"><%= money_format(amount) %></h1>

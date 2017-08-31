@@ -9,23 +9,7 @@
 
 <div class='wrapper wrapper-content animated fadeInRight'>
   <div class='row'>
-
-    <div class="col-lg-6">
-      <div class="ibox float-e-margins">
-        <div class="ibox-title">
-          <h5>Monthly Income / Expenses for Current Year (<%= Date.today.year %>)</h5>
-        </div>
-        <div class="ibox-content">
-          <div>
-            <canvas id="income_expense_bar_chart" height="140"></canvas>
-            <script type="text/javascript">
-              income_expense_bar_chart()
-            </script>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
+    <%= render partial: '/reports/monthly_income_expense' %>
+    <%= render partial: '/reports/monthly_my_balance' %>
   </div>
 </div>

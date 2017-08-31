@@ -1,0 +1,15 @@
+<div class="col-lg-6">
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <h5>Monthly Pending Balance for Current Year (<%= Date.today.year %>)</h5>
+    </div>
+    <div class="ibox-content">
+      <div>
+        <canvas id="monthly_pending_balance" height="140"></canvas>
+        <script type="text/javascript">
+          monthly_pending_balance()          
+        </script>
+      </div>
+    </div>
+  </div>
+</div>

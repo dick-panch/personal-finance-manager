@@ -1,0 +1,24 @@
+<div class="col-lg-6">
+  <div class="ibox float-e-margins">
+    <div class="ibox-title">
+      <h5>Categorize incomes for the current month</h5>
+    </div>
+    <div class="ibox-content">
+      <div class="col-md-6">
+        <canvas id="categorize_monthly_incomes_chart"></canvas>
+        <script type="text/javascript">categorize_monthly_incomes_chart(); </script>
+      </div>
+      <div class="col-md-6">
+        <ul class="chart-list">
+          <% @category_incomes_for_current_month.each_with_index do |data, index| %>                
+            <li class="color<%= index < 8 ? index+1 : index-8 %>">
+              <font><%= data['category'] %></font>
+              <span><%= data['percent']%>%</span>
+            </li>
+          <% end %>                          
+        </ul>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
