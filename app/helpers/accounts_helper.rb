@@ -11,15 +11,16 @@ module AccountsHelper
 		data.present? ? data.values.flatten.map{|t| t.amount}.sum : 0.0
 	end
 
-	def display_profit_and_loss_amount(incomes=0, expenses=0)
-		total_income 		= total_expenses_or_income(incomes)
-		total_expenses 	= total_expenses_or_income(expenses)
-		diff 						= profit_or_loss_amount(total_income, total_expenses)		
+	def display_profit_and_loss_amount(incomes=0, expenses=0, investments=0)
+		total_income 			= total_expenses_or_income(incomes)
+		total_expenses 		= total_expenses_or_income(expenses)
+		total_investments = total_expenses_or_income(investments)
+		diff 							= profit_or_loss_amount(total_income, total_expenses, total_investments)		
 		return diff.positive? ? money_format(diff.round(2)) : "(#{money_format(diff.round(2))})"
 	end
 
-	def profit_or_loss_amount(income=0, expenses=0)
-		return (income - expenses).round(1)
+	def profit_or_loss_amount(income=0, expenses=0, investments=0)
+		return (income - (expenses + investments)).round(1)
 	end
 
 	def display_header_for_profit_and_loss_statement(params)

@@ -22,7 +22,7 @@
 //= require theme/jquery.peity.min.js
 //= require theme/peity-demo.js
 //= require theme/inspinia.js
-//= require theme/pace.min.js
+// require theme/pace.min.js
 //= require theme/jquery-ui.min.js
 //= require theme/jquery.gritter.min.js
 //= require theme/jquery.sparkline.min.js

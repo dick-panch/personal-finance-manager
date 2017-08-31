@@ -24,13 +24,15 @@
 					<table class="table table-bordered">
             <!--  INCOME SECTION -->
             <%= render '/accounts/statement', obj: @incomes, type: 'Incomes' %>
+            <!-- INVESTMENT SECTION -->
+            <%= render '/accounts/statement', obj: @investments, type: 'Investments' %>
             <!-- EXPENSES SECTION -->
             <%= render '/accounts/statement', obj: @expenses, type: 'Expenses' %>
             <!-- PROFIT AND LOSS STATEMENT -->
             <thead>
               <tr>
                 <th>PROFIT / LOSS</th>
-                <th class="col-sm-3 text-right <%= profit_or_loss_amount(total_expenses_or_income(@incomes), total_expenses_or_income(@expenses)).positive? ? 'text-navy' : 'text-danger' %>"><%= display_profit_and_loss_amount(@incomes, @expenses) %></th>
+                <th class="col-sm-3 text-right <%= profit_or_loss_amount(total_expenses_or_income(@incomes), total_expenses_or_income(@expenses), total_expenses_or_income(@investments)).positive? ? 'text-navy' : 'text-danger' %>"><%= display_profit_and_loss_amount(@incomes, @expenses, @investments) %></th>
               </tr>
             </thead>
           </table>
