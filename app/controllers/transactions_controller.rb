@@ -3,8 +3,9 @@ class TransactionsController < ApplicationController
 
 	expose :transactions, ->{ current_user.transactions.search(params).order('transaction_date DESC') }
 	expose :transaction, find_by: :slug
-	expose :income_categories, -> { Category.where('(user_id IS NULL and category_type_id = ?) or user_id = ?', 2, current_user.id) }
-	expose :expense_categories, -> { Category.where('(user_id IS NULL and category_type_id = ?) or user_id = ?', 1, current_user.id) }
+	expose :income_categories, -> { find_categories(2) }
+	expose :expense_categories, -> { find_categories(1) }
+	expose :investment_categories, -> { find_categories(3) }
 	expose :type, -> { find_transaction_type }	
 
 	add_breadcrumb 'Home', :dashboard_url, title: 'Back to Dashboard Page'
@@ -77,5 +78,9 @@ class TransactionsController < ApplicationController
 		else
 			return 'investment'
 		end
+	end
+
+	def find_categories(type_id)
+		Category.where('(user_id IS NULL and category_type_id = ?) or (user_id = ? and category_type_id = ?)', type_id, current_user.id, type_id)
 	end
 end

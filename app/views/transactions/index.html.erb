@@ -5,17 +5,6 @@
       <%= render_breadcrumbs tag: :li %>
     </ol>    
   </div>
-  <div class='col-lg-4'>
-    <p class='add-record text-right'>
-      <%= link_to new_transaction_url(type: 'expense'), data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
-        <i class="fa fa-plus"></i> Add Expense
-      <% end %>
-      &nbsp;&nbsp;&nbsp;
-      <%= link_to new_transaction_url(type: 'income'), data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
-        <i class="fa fa-plus"></i> Add Income
-      <% end %>
-    </p>
-  </div>
 </div>
 
 <div class='wrapper wrapper-content animated fadeInRight'>
@@ -32,7 +21,29 @@
           <div class="col-sm-2 month-dropdown">
             <%= select_tag :type_id, options_for_select(Rails.application.secrets.transaction_types.invert.to_a, params[:type_id]), {include_blank: 'Select Type', class: 'form-control'} %>
           </div>
-        </div>      
+          <div class="ibox-tools">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li>
+                <%= link_to new_transaction_url(type: 'expense'), data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
+                  Add Expense
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_transaction_url(type: 'income'), data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
+                  Add Income
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_transaction_url(type: 'investment'), data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
+                  Add Investment
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>              
         <div class='ibox-content'>
           <div class='table-responsive'>
 
@@ -53,7 +64,7 @@
                   <tr>                    
                     <td><%= transaction.transaction_date.strftime('%d / %m / %Y') %></td>
                     <td><%= transaction.description %></td>
-                    <td><%= transaction.try(:category).try(:name) %></td>
+                    <td><%= transaction.try(:category).try(:name) %> <small><b>(<%= transaction.category.category_type %>)</small></b></td>
                     <td><%= transaction.payment_type %></td>
                     <td><%= transaction.transaction_type %></td>
                     <td><%= money_format(transaction.amount) %></td>
