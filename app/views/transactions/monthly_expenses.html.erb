@@ -63,6 +63,11 @@
                       <td><strong><%= money_format(values.map(&:amount).sum) %></strong></td>
                     </tr>
                   <% end %>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2" class="text-center"><strong>Total Expenses</strong></td>
+                    <td><strong><%= money_format(transactions.expenses.map(&:amount).sum()) %></strong></td>
+                  </tr>                  
                 </tbody>
               </table>
             <% else %>

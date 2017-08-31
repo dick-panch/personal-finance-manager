@@ -13,7 +13,7 @@
     <div class='col-lg-12'>
       <div class='ibox float-e-margins'>
         <div class="ibox-title">
-          <%= form_tag monthly_expenses_transactions_url, method: :get do %>
+          <%= form_tag monthly_incomes_transactions_url, method: :get do %>
             <div class="col-sm-2 month-dropdown">
               <%= select_tag :month, options_for_select( (1..12).to_a.map{|month| [Date::MONTHNAMES[month], month]}, params[:month].present? ? params[:month].to_i : Date.today.month), class: 'form-control' %>
             </div>
@@ -63,6 +63,11 @@
                       <td><strong><%= money_format(values.map(&:amount).sum) %></strong></td>
                     </tr>
                   <% end %>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2" class="text-center"><strong>Total Income</strong></td>
+                    <td><strong><%= money_format(transactions.incomes.map(&:amount).sum()) %></strong></td>
+                  </tr>                  
                 </tbody>
               </table>
             <% else %>

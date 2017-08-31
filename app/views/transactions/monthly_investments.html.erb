@@ -62,12 +62,12 @@
                       <td><strong>Total</strong></td>
                       <td><strong><%= money_format(values.map(&:amount).sum) %></strong></td>
                     </tr>
-                    <tr>
-                      <td colspan="2"></td>
-                      <td colspan="2" class="text-center"><strong>Total Investments</strong></td>
-                      <td><strong><%= money_format(transactions.investments.map(&:amount).sum()) %></strong></td>
-                    </tr>
                   <% end %>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td colspan="2" class="text-center"><strong>Total Investments</strong></td>
+                    <td><strong><%= money_format(transactions.investments.map(&:amount).sum()) %></strong></td>
+                  </tr>                  
                 </tbody>
               </table>
             <% else %>
