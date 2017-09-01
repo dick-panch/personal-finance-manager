@@ -58,7 +58,14 @@ function income_expense_bar_chart(){
     	pointBackgroundColor: "rgba(26,179,148,1)",
     	pointBorderColor: "#fff",
     	data: gon.expenses
-  	}]
+  	},{
+      label: "Investment",
+      backgroundColor: 'rgba(247, 165, 74, 0.50)',
+      borderColor: "rgba(247, 165, 74, 0.71)",
+      pointBackgroundColor: "rgba(247, 165, 74, 1)",
+      pointBorderColor: "#fff",
+      data: gon.investments
+    }]
 	};
 
 	var barOptions = {

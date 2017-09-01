@@ -12,6 +12,7 @@ class ReportsController < ApplicationController
     end
     gon.incomes  		= @incomes.values
     gon.expenses 		= @expenses.values
+    gon.investments = @investments.values
     gon.my_balances = @my_balances.values
 	end
 
