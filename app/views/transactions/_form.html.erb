@@ -50,7 +50,7 @@
             </div>
             <div class="form-group">
               <%= f.label :category_id, class: 'col-sm-2 control-label' %>
-              <div class="col-sm-8">                                                  
+              <div class="col-sm-8">
                 <% if type == 'income' %>
                   <%= f.select :category_id, options_for_select(income_categories.collect{|t| [t.name, t.id]}, f.object.category_id), {include_blank: false}, {class: 'form-control chosen-select'} %>
                 <% elsif type == 'investment' %>
