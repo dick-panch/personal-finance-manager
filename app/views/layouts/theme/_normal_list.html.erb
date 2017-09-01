@@ -1,18 +1,18 @@
 <li class="<%= 'active' if controller.controller_name == 'categories' %>">
-  <%= link_to categories_url do %>
+  <%= link_to categories_url, class: 'loader-display' do %>
     <i class="fa fa-list"></i>
     <span class="nav-label">Category</span>
   <% end %>          
 </li>
 <li class="<%= 'active' if controller.controller_name == 'transactions' %>">
   <a href="javascript:void(0);">
-  	<i class="fa fa-money"></i>
+  	<i class="fa fa-list-alt"></i>
   	<span class="nav-label">Transactions</span>
   	<span class="fa arrow"></span>
   </a>
   <ul class="nav nav-second-level collapse" style="height: 0px;">
     <li class="<%= 'active' if controller.action_name == 'index' %>">
-    	<%= link_to 'Generals', transactions_url %>    	
+    	<%= link_to 'Generals', transactions_url, class: 'loader-display' %>    	
     </li>
     <li class="<%= 'active' if ['monthly_incomes', 'monthly_expenses', 'monthly_investments'].include?(controller.action_name) %>">
     	<%= link_to 'Monthly Report', monthly_incomes_transactions_url, class: 'loader-display' %>    		
@@ -38,8 +38,15 @@
   </ul>  
 </li>
 
+<li class="<%= 'active' if controller.controller_name == 'balances' %>">
+  <%= link_to balances_url, class: 'loader-display' do %>
+    <i class="fa fa-money"></i>
+    <span class="nav-label">Balance</span>
+  <% end %>            
+</li>
+
 <li class="<%= 'active' if controller.controller_name == 'reports' %>">
-  <%= link_to reports_url do %>
+  <%= link_to reports_url, class: 'loader-display' do %>
     <i class="fa fa-bar-chart"></i>
     <span class="nav-label">Reports</span>
   <% end %>            
