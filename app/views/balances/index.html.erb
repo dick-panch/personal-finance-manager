@@ -26,7 +26,7 @@
                   <th>Income</th>
                   <th>Expense</th>
                   <th>Investment</th>
-                  <th>TOTAL</th>
+                  <th>Balance</th>                  
                 </tr>
               </thead>
               <tbody>
@@ -36,9 +36,23 @@
               			<td><%= money_format(data[:income]) %></td>
               			<td><%= money_format(data[:expense]) %></td>
               			<td><%= money_format(data[:investment]) %></td>
-              			<td><%= money_format(data[:total]) %></td>
+              			<td><%= money_format(data[:income] - (data[:expense] + data[:investment]) ) %></td>
               		</tr>
               	<% end %>
+              	<tr>
+              		<td></td>
+              		<td></td>
+              		<td></td>
+              		<td><b>Yearly Total</b></td>
+              		<td><%= money_format(@yearly_total) %></td>
+              	</tr>
+              	<tr>
+              		<td></td>
+              		<td></td>
+              		<td></td>
+              		<td><b>Total Balance </b></td>
+              		<td><%= money_format(@total) %></td>
+              	</tr>              	
               </tbody>              
             </table>
         	</div>
