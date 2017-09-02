@@ -5,11 +5,11 @@
         <h1 class="wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig;">Learn to Code in <strong>1 Month</strong></h1>
         <div class="description wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig;">
           <p>
-            We have been working very hard to create the new version of our course. 
+            We have been working very hard to create the new version of our course.
             It comes with a lot of new features, easy to follow videos and images. Check it out now!
           </p>
         </div>
-        <div class="top-big-link wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">          
+        <div class="top-big-link wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
           <a class="btn btn-link-2 scroll-link" href="javascript:void(0);">Know More</a>
         </div>
       </div>
@@ -22,22 +22,22 @@
             <div class="form-top-right">
               <span aria-hidden="true" class="typcn typcn-pencil"></span>
             </div>
-          </div>          
-          <div class="form-bottom">            
+          </div>
+          <div class="form-bottom">
             <%= render partial: '/layouts/flash' %>
             <%= form_for(resource, as: resource_name, url: session_path(resource_name, html: {class: 'user-session'})) do |f| %>
               <div class="form-group">
-                <%= f.label :email, 'Email', class: 'sr-only' %>                
-                <%= f.email_field :email, placeholder: 'Email', class: 'form-email form-control' %>              
+                <%= f.label :email, 'Email', class: 'sr-only' %>
+                <%= f.email_field :email, placeholder: 'Email', class: 'form-email form-control' %>
               </div>
               <div class="form-group">
-                <%= f.label :password, 'Password', class: 'sr-only' %>                
+                <%= f.label :password, 'Password', class: 'sr-only' %>
                 <%= f.password_field :password, placeholder: 'Password', class: 'form-first-name form-control' %>
               </div>
-              <%= f.button 'Sign In !', class: 'btn', data: {disable_with: 'Loading...'}, type: 'submit' %>                
+              <%= f.button 'Sign In !', class: 'btn', data: {disable_with: 'Loading...'}, type: 'submit' %>
               <div class="form-links">
-                <%= render "devise/shared/links" %>                  
-                <a href="javascript:void(0);" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> - 
+                <%= render "devise/shared/links" %>
+                <a href="javascript:void(0);" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> -
                 <a href="javascript:void(0);" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
               </div>
             <% end %>

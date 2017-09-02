@@ -1,16 +1,14 @@
 <div class='row wrapper border-bottom white-bg page-heading'>
   <div class='col-lg-10'>
     <h2>Categories</h2>
-    <ol class='breadcrumb'>
-      <%= render_breadcrumbs tag: :li %>
-    </ol>    
+    <ol class='breadcrumb'><%= render_breadcrumbs tag: :li %></ol>
   </div>
   <div class='col-lg-2'>
     <p class='add-record text-right'>
       <%= link_to new_category_url, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
         <i class="fa fa-plus"></i> Add New Category
       <% end %>
-    </p>    
+    </p>
   </div>
 </div>
 
@@ -34,7 +32,7 @@
                 </tr>
               </thead>
               <tbody>
-                <% categories.each do |category| %>                  
+                <% categories.each do |category| %>
                   <tr class='gradeX'>
                     <td><%= category.try(:id) %></td>
                     <td><%= category.try(:name) %></td>
@@ -55,7 +53,7 @@
                         <% end %>
                       <% else %>
                         Only Admin
-                      <% end %>                           
+                      <% end %>
                     </td>
                   </tr>
                 <% end %>

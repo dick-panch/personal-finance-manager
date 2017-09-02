@@ -3,7 +3,7 @@ module DeviseHelper
     return "" unless devise_error_messages?
     return "" if resource.errors.empty?
     messages = resource.errors.full_messages.first
-    flash[:error] = "#{messages.html_safe}" 
+    flash[:error] = "#{messages.html_safe}"
     return ''
   end
 

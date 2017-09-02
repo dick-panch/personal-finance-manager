@@ -18,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -49,6 +49,25 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'rack-mini-profiler'
+  # For memory profiling (requires Ruby MRI 2.1+)
+  gem 'memory_profiler'
+  # For call-stack profiling flamegraphs (requires Ruby MRI 2.0.0+)
+  gem 'flamegraph'
+  gem 'stackprof'     # For Ruby MRI 2.1+
+  gem 'fast_stack'    # For Ruby MRI 2.0
+
+  gem 'brakeman', :require => false
+
+  gem 'colored'
+  gem 'deadweight', :require => 'deadweight/hijack/rails'
+
+  gem "rails_best_practices"
+
+  gem "rubycritic", require: false
+
+  gem 'rubocop', require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -85,3 +104,7 @@ gem 'momentjs-rails'
 
 ## Gon
 gem 'gon'
+
+gem 'heroku-deflater', group: :production
+gem 'heroku_rails_deflate', group: :production
+gem 'rails_critical_css_server'

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Personal Finance Manager</title>
     <!-- CSS -->
-    <%= stylesheet_link_tag 'welcome', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= RailsCriticalCssServer::Rewrite.call self do %>
+      <%= stylesheet_link_tag 'welcome', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% end %>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -19,32 +22,31 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
-    <%= csrf_meta_tags %>      
+    <%= csrf_meta_tags %>
   </head>
   <body>
     <!-- Loader -->
     <div class="loader hide">
       <div class="loader-img hide"></div>
-    </div>        
+    </div>
     <!-- Top content -->
     <div class="top-content">
       <!-- Top menu -->
       <%= render partial: '/layouts/welcome/header' %>
-      <%= yield %>          
+      <%= yield %>
       <div class="backstretch"><%= image_tag('landing/1.jpg')%></div>
     </div>
-    
     <% if controller.controller_name == 'welcome' %>
       <!-- Features -->
-      <%= render partial: '/layouts/welcome/feature' %>      
+      <%= render partial: '/layouts/welcome/feature' %>
       <!-- Always beautiful -->
-      <%= render partial: '/layouts/welcome/feature' %>      
+      <%= render partial: '/layouts/welcome/feature' %>
       <!-- How it works -->
       <%= render partial: '/layouts/welcome/how_it_work' %>
       <!-- Pricing -->
       <%= render partial: '/layouts/welcome/pricing' %>
       <!-- Call to action -->
-      <%= render partial: '/layouts/welcome/call_to_action' %>      
+      <%= render partial: '/layouts/welcome/call_to_action' %>
       <!-- About us -->
       <%= render partial: '/layouts/welcome/about_us' %>
       <!-- Testimonials -->
@@ -56,6 +58,6 @@
     <%= javascript_include_tag 'welcome', 'data-turbolinks-track': 'reload' %>
     <!--[if lt IE 10]>
       <script src="/assets/js/placeholder.js"></script>
-    <![endif]-->    
+    <![endif]-->
   </body>
 </html>

@@ -1,13 +1,11 @@
 <div class='row wrapper border-bottom white-bg page-heading'>
   <div class='col-lg-8'>
     <h2>Yearly Incomes Transaction Summary</h2>
-    <ol class='breadcrumb'>
-      <%= render_breadcrumbs tag: :li %>
-    </ol>    
+    <ol class='breadcrumb'><%= render_breadcrumbs tag: :li %></ol>
   </div>
   <div class="col-lg-2 pull-right mrgtop30">
     <%= select_tag :year, options_for_select(@years, params[:year].present? ? params[:year] : Date.today.year), class: 'form-control', onchange: "window.location.href='/transactions/yearly-incomes/?year='+$(this).val()" %>
-  </div>  
+  </div>
 </div>
 
 <div class='wrapper wrapper-content animated fadeInRight'>
@@ -21,7 +19,7 @@
 
             <table class='table table-hover' >
               <thead>
-                <tr>                  
+                <tr>
                   <th class="col-sm-2">CATEGORY</th>
                   <% (1..12).to_a.each do |month| %>
                     <th><%= Date::MONTHNAMES[month][0..2].upcase %></th>
@@ -32,7 +30,7 @@
               <tbody>
                 <% @results.each do |category, transactions| %>
                   <tr>
-                    <td><%= category.name %></td>                    
+                    <td><%= category.name %></td>
                     <% (1..12).to_a.each do |month| %>
                       <td><%= money_format(transactions[month].present? ? transactions[month].to_f : 0.0) %></td>
                     <% end %>

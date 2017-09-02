@@ -6,11 +6,11 @@
           <h5><%= type.capitalize %> Transaction</h5>
         </div>
         <div class='ibox-content'>
-          <%= form_for transaction, html: {class: 'form-horizontal'} do |f| %>            
+          <%= form_for transaction, html: {class: 'form-horizontal'} do |f| %>
             <div class="form-group">
               <%= f.label :description, class: 'col-sm-2 control-label' %>
               <div class="col-sm-8">
-                <%= f.text_field :description, placeholder: 'Transaction Summary', class: 'form-control' %>                
+                <%= f.text_field :description, placeholder: 'Transaction Summary', class: 'form-control' %>
               </div>
             </div>
 
@@ -26,27 +26,27 @@
               </div>
             </div>
 
-            <div class="form-group">              
+            <div class="form-group">
               <label class="col-sm-2 control-label">&nbsp;&nbsp;</label>
               <div class="col-sm-3">
                 <div class="i-checks">
                   <% if type == 'income' %>
-                    <label><%= f.check_box :is_received %> <i></i> It's Received </label>  
+                    <label><%= f.check_box :is_received %> <i></i> It's Received </label>
                   <% else %>
                     <label><%= f.check_box :is_paid %> <i></i> It's Paid </label>
                   <% end %>
                 </div>
-              </div>              
+              </div>
               <div class="col-sm-2">
                 <div class="i-checks">
                   <label> <%= f.check_box :is_favorite %> <i></i> Favorite </label>
                 </div>
-              </div>              
+              </div>
               <div class="col-sm-3">
                 <div class="i-checks">
                   <label> <%= f.check_box :is_repeat %> <i></i> Repeat / <small>Every Month</small> </label>
                 </div>
-              </div>              
+              </div>
             </div>
             <div class="form-group">
               <%= f.label :category_id, class: 'col-sm-2 control-label' %>

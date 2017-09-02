@@ -3,14 +3,14 @@
     <h2>Categories</h2>
     <ol class='breadcrumb'>
       <%= render_breadcrumbs tag: :li %>
-    </ol>    
+    </ol>
   </div>
   <div class='col-lg-2'>
     <p class='add-record'>
       <%= link_to admin_categories_url, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
         <i class="fa fa-list"></i> List Categories
       <% end %>
-    </p>    
+    </p>
   </div>
 </div>
 
@@ -47,7 +47,7 @@
               <tr>
                 <td class="col-lg-3">Updated At</td>
                 <td><%= local_time(category.updated_at) %></td>
-              </tr>              
+              </tr>
             </table>
           </div>
         </div>

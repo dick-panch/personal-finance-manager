@@ -10,7 +10,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  def create    
+  def create
     build_resource(sign_up_params)
     resource.save
     yield resource if block_given?
@@ -28,7 +28,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       clean_up_passwords resource
       set_minimum_password_length
       respond_with resource
-    end    
+    end
   end
 
   # GET /resource/edit

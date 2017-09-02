@@ -1,9 +1,7 @@
 <div class='row wrapper border-bottom white-bg page-heading'>
   <div class='col-lg-8'>
     <h2>Monthly Investments Transaction Summary</h2>
-    <ol class='breadcrumb'>
-      <%= render_breadcrumbs tag: :li %>
-    </ol>    
+    <ol class='breadcrumb'><%= render_breadcrumbs tag: :li %></ol>
   </div>
 </div>
 
@@ -24,13 +22,13 @@
               <%= submit_tag 'Search', class: 'btn btn-primary btn-xs' %>
             </div>
           <% end %>
-        </div>      
+        </div>
         <div class='ibox-content'>
           <div class='table-responsive'>
-            <% if transactions.investments.present? %>  
+            <% if transactions.investments.present? %>
               <table class='table table-hover' >
                 <thead>
-                  <tr>                  
+                  <tr>
                     <th class="col-sm-5">Summary</th>
                     <th>Category</th>
                     <th>Payment Type</th>
@@ -49,7 +47,7 @@
                       <td colspan="5"><strong><%= local_date(key) %></strong></td>
                     </tr>
                     <% values.each do |transaction| %>
-                      <tr>                                          
+                      <tr>
                         <td><i class="fa fa-angle-right"></i> &nbsp; <%= transaction.description %></td>
                         <td><%= transaction.try(:category).try(:name) %></td>
                         <td><%= transaction.payment_type %></td>
@@ -67,7 +65,7 @@
                     <td colspan="2"></td>
                     <td colspan="2" class="text-center"><strong>Total Investments</strong></td>
                     <td><strong><%= money_format(transactions.investments.map(&:amount).sum()) %></strong></td>
-                  </tr>                  
+                  </tr>
                 </tbody>
               </table>
             <% else %>

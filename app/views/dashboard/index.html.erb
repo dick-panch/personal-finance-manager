@@ -1,6 +1,6 @@
 <div class="row  border-bottom white-bg dashboard-header">
   <div class="col-md-8">
-    <div class="ibox float-e-margins">      
+    <div class="ibox float-e-margins">
       <div>
         <span class="pull-right text-right">
           <small>Average value of monthly expenses </small>
@@ -10,10 +10,10 @@
         <h1 class="m-b-xs"><%= money_format((@current_year_total_income/12).round(2))%></h1>
         <h3 class="font-bold no-margins">
           Avg. Month Income
-        </h3>        
+        </h3>
       </div>
       <div>
-        <canvas id="monthlyIncomeExpenseChart" height="100"></canvas>      
+        <canvas id="monthlyIncomeExpenseChart" height="100"></canvas>
         <script type="text/javascript">
           var expense_data = <%= raw @current_year_expense_month_wise.values.map{|t| t.to_f }%>
           var income_data = <%= raw @current_year_income_month_wise.values.map{|t| t.to_f}%>
@@ -38,7 +38,7 @@
 </div>
 
 <div class="wrapper wrapper-content">
-  <div class="row">    
+  <div class="row">
     <%= render partial: '/dashboard/box', locals: {duration: 'Month', amount: @current_month_total_income, category_type: 'income', amount2: @previous_month_total_income} %>
     <%= render partial: '/dashboard/box', locals: {duration: 'Month', amount: @current_month_total_expense, category_type: 'expense', amount2: @previous_month_total_expense} %>
     <%= render partial: '/dashboard/box', locals: {duration: 'Month', amount: @current_month_total_investment, category_type: 'investment', amount2: @previous_month_total_investment} %>

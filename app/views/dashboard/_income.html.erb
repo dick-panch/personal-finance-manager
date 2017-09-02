@@ -10,12 +10,12 @@
       </div>
       <div class="col-md-6">
         <ul class="chart-list">
-          <% @category_incomes_for_current_month.each_with_index do |data, index| %>                
+          <% @category_incomes_for_current_month.each_with_index do |data, index| %>
             <li class="color<%= index < 8 ? index+1 : index-8 %>">
               <font><%= data['category'] %></font>
               <span><%= data['percent']%>%</span>
             </li>
-          <% end %>                          
+          <% end %>
         </ul>
       </div>
       <div class="clearfix"></div>

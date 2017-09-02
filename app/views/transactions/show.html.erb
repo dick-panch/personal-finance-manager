@@ -3,14 +3,14 @@
     <h2>Transaction</h2>
     <ol class='breadcrumb'>
       <%= render_breadcrumbs tag: :li %>
-    </ol>    
+    </ol>
   </div>
   <div class='col-lg-2'>
     <p class='add-record text-right'>
       <%= link_to transactions_url, data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Loading...".html_safe} do %>
         <i class="fa fa-money"></i> List Transactions
       <% end %>
-    </p>    
+    </p>
   </div>
 </div>
 
@@ -49,7 +49,7 @@
                 <tr>
                   <td class="col-lg-3">Amount Received</td>
                   <td><%= transaction.is_received? ? 'Yes' : 'No' %></td>
-                </tr>              
+                </tr>
               <% end %>
               <tr>
                 <td class="col-lg-3">Favorite</td>
@@ -70,7 +70,7 @@
               <tr>
                 <td class="col-lg-3">Transaction Type</td>
                 <td><%= transaction.transaction_type %></td>
-              </tr>              
+              </tr>
               <tr>
                 <td class="col-lg-3">Transaction Date</td>
                 <td><%= local_date(transaction.transaction_date) %></td>
@@ -82,7 +82,7 @@
               <tr>
                 <td class="col-lg-3">Updated At</td>
                 <td><%= local_time(transaction.updated_at) %></td>
-              </tr>              
+              </tr>
             </table>
           </div>
         </div>

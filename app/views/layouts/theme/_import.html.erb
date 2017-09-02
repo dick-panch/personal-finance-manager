@@ -7,16 +7,16 @@
     <div class="sidebar-message">
       <div class="media-body">
        	<%= form_for Transaction.new, url: import_transactions_url, method: :post do |f| %>
-          <div class="form-group">            
+          <div class="form-group">
             <label>Upload File</label>
             <%= f.file_field :file, class: 'form-control' %>
-          </div>          
-          <div class="form-group">
-            <%= submit_tag "Upload", name: nil, class: 'btn btn-primary btn-sm', data: {disable_with: 'Importing...' } %>            
           </div>
-          <%= link_to 'Download Example Format', 'example_format.csv' %>      
+          <div class="form-group">
+            <%= submit_tag "Upload", name: nil, class: 'btn btn-primary btn-sm', data: {disable_with: 'Importing...' } %>
+          </div>
+          <%= link_to 'Download Example Format', 'example_format.csv' %>
         <% end %>
-      </div>      
+      </div>
     </div>
 
     <ul class="sidebar-list">
@@ -29,7 +29,7 @@
         <b>1.</b> Header Name should not be change <br>
         <b>2.</b> Date should be 'DD/MM/YYYY' format <br>
         <b>3.</b> is_income field value should be 0 or 1. 0 for False and 1 for True. <br>
-        <b>4.</b> payment_type value are case sensitive. 
+        <b>4.</b> payment_type value are case sensitive.
       </li>
       <li class="pad020">
         <h4> List of Payment Type </h4>

@@ -3,7 +3,7 @@
     <h2>Edit <%= resource_name.to_s.humanize %> Profile</h2>
     <ol class='breadcrumb'>
       <%= render_breadcrumbs tag: :li %>
-    </ol>    
+    </ol>
   </div>
 </div>
 
@@ -34,21 +34,21 @@
               </div>
             </div>
 
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>              
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div class="form-group">
                 <label class="col-sm-3 control-label"></label>
                 <div class="col-sm-8">
                   <h4>Currently waiting confirmation for: <strong><%= resource.unconfirmed_email %></strong></h4>
-                </div>              
+                </div>
               </div>
             <% end %>
 
             <div class="form-group">
-              <%= f.label :password, class: 'col-sm-3 control-label' %>             
+              <%= f.label :password, class: 'col-sm-3 control-label' %>
               <div class="col-sm-8">
                 <i>(leave blank if you don't want to change it)</i>
                 <%= f.password_field :password, autocomplete: "off", placeholder: 'Password', class: 'form-control' %>
-                <% if @minimum_password_length %>                
+                <% if @minimum_password_length %>
                   <em><%= @minimum_password_length %> characters minimum</em>
                 <% end %>
               </div>
@@ -58,11 +58,11 @@
               <%= f.label :password_confirmation, 'Confirmation', class: 'col-sm-3 control-label' %>
               <div class="col-sm-8">
                 <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Password Confirmation', class: 'form-control' %>
-              </div>              
+              </div>
             </div>
 
             <div class="form-group">
-              <%= f.label :current_password, class: 'col-sm-3 control-label' %> 
+              <%= f.label :current_password, class: 'col-sm-3 control-label' %>
               <div class="col-sm-8">
                 <i>(we need your current password to confirm your changes)</i>
                 <%= f.password_field :current_password, autocomplete: "off", placeholder: 'Current Password', class: 'form-control' %>
@@ -85,7 +85,7 @@
         <div class='ibox-content'>
           <h3>Cancel my account</h3>
           <p>
-            Unhappy? 
+            Unhappy?
             <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %>
           </p>
         </div>

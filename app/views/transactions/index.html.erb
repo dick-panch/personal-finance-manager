@@ -1,9 +1,7 @@
 <div class='row wrapper border-bottom white-bg page-heading'>
   <div class='col-lg-8'>
     <h2>Transaction Summary</h2>
-    <ol class='breadcrumb'>
-      <%= render_breadcrumbs tag: :li %>
-    </ol>    
+    <ol class='breadcrumb'><%= render_breadcrumbs tag: :li %></ol>
   </div>
 </div>
 
@@ -43,7 +41,7 @@
               </li>
             </ul>
           </div>
-        </div>              
+        </div>
         <div class='ibox-content'>
           <div class='table-responsive'>
 
@@ -61,7 +59,7 @@
               </thead>
               <tbody>
                 <% transactions.each do |transaction| %>
-                  <tr>                    
+                  <tr>
                     <td><%= transaction.transaction_date.strftime('%d / %m / %Y') %></td>
                     <td><%= transaction.description %></td>
                     <td><%= transaction.try(:category).try(:name) %> <small><b>(<%= transaction.category.category_type %>)</small></b></td>
@@ -77,7 +75,7 @@
                         <% end %>
                         <%= link_to transaction_url(transaction), data: {disable_with: "<i class='fa fa-spinner'></i>".html_safe, confirm: 'Are you sure want to delete this transaction ?'}, method: :delete  do %>
                           <i class='fa fa-trash large'></i>
-                        <% end %>                      
+                        <% end %>
                     </td>
                   </tr>
                 <% end %>

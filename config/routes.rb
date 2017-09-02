@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'welcome#index'
 
-  devise_for :users, controllers: { 
+  devise_for :users, controllers: {
   	sessions: 'users/sessions',
   	registrations: 'users/registrations',
   	passwords: 'users/passwords',
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       post :import
     end
   end
-  
+
   resources :accounts, only: [] do
     collection do
       get :profit_and_loss, path: 'profit-and-loss'
@@ -42,12 +42,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update]
   resources :reports, only: [:index] do
-    collection do      
-    end
   end
 
   resources :balances, only: [:index]
-  
+
   ## Admin Routes ------------------------------------------------------
   namespace :admin do
     resources :categories

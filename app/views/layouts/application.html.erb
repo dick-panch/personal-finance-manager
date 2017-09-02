@@ -11,7 +11,10 @@
     <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
     <title>Personal Finance Manager</title>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= RailsCriticalCssServer::Rewrite.call self do %>
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% end %>
+		
     <%= csrf_meta_tags %>
 	</head>
 	<body>
@@ -36,6 +39,6 @@
     <% end %>
     <div class="modal-backdrop fade loader-overlay" style="display: none;">
       <%= render 'layouts/loader', initial_shown: true %>
-    </div>        
+    </div>
 	</body>
 </html>

@@ -1,13 +1,11 @@
 <div class='row wrapper border-bottom white-bg page-heading'>
   <div class='col-lg-8'>
     <h2>Savings / Bank & Cash Balance</h2>
-    <ol class='breadcrumb'>
-      <%= render_breadcrumbs tag: :li %>
-    </ol>    
+    <ol class='breadcrumb'><%= render_breadcrumbs tag: :li %></ol>
   </div>
   <div class="col-lg-2 pull-right mrgtop30">
     <%= select_tag :year, options_for_select(@years, params[:year].present? ? params[:year] : Date.today.year), class: 'form-control', onchange: "window.location.href='/balances/?year='+$(this).val()" %>
-  </div>    
+  </div>
 </div>
 
 <div class='wrapper wrapper-content animated fadeInRight'>
@@ -21,12 +19,12 @@
         		
         		<table class='table table-hover' >
               <thead>
-                <tr>                  
+                <tr>
                   <th>Month</th>
                   <th>Income</th>
                   <th>Expense</th>
                   <th>Investment</th>
-                  <th>Balance</th>                  
+                  <th>Balance</th>
                 </tr>
               </thead>
               <tbody>
@@ -52,8 +50,8 @@
               		<td></td>
               		<td><b>Total Balance </b></td>
               		<td><%= money_format(@total) %></td>
-              	</tr>              	
-              </tbody>              
+              	</tr>
+              </tbody>
             </table>
         	</div>
         </div>

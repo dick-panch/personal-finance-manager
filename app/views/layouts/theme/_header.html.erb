@@ -7,7 +7,7 @@
             <span class="clear">
             	<span class="block m-t-xs">
             		<strong class="font-bold"><%= current_user.username.upcase %></strong>
-              </span> 
+              </span>
               <span class="text-muted text-xs block"><%= current_user.name.upcase %><b class="caret"></b></span>
             </span>
           </a>
@@ -17,7 +17,7 @@
             <li class="divider"></li>
             <li><%= link_to 'Logout',  destroy_user_session_url, method: :delete %></li>
           </ul>
-        </div>        
+        </div>
       </li>
       <li class="<%= 'active' if controller.controller_name == 'dashboard' %>">
         <%= link_to dashboard_url do %>

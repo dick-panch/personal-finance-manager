@@ -3,7 +3,7 @@
     <h2>Edit User Setting</h2>
     <ol class='breadcrumb'>
       <%= render_breadcrumbs tag: :li %>
-    </ol>    
+    </ol>
   </div>
 </div>
 
@@ -16,10 +16,10 @@
             <%= f.fields_for :setting, current_user.setting do |s| %>
               <div class="form-group no-fg">
                 <%= s.label :financial_year, class: 'col-sm-3 control-label' %>
-                <div class='col-sm-8'>                  
+                <div class='col-sm-8'>
                   <%= s.select :financial_year, options_for_select(Rails.application.secrets.financial_years.invert.to_a, s.object.financial_year), {include_blank: false}, {class: 'form-control'} %>
                 </div>
-              </div>              
+              </div>
             <% end %>
             <div class="hr-line-dashed"></div>
             <div class="form-group">
