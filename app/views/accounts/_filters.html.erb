@@ -12,12 +12,7 @@
         <%= form_tag profit_and_loss_accounts_url, method: :get, class: 'form-inline' do %>
           <div class="form-group">
             <label class="sr-only">Period Type</label>
-            <%= select_tag 'period_type', options_for_select([
-              ['Monthly', 'monthly'],
-              ['Quarterly', 'quarterly'],
-              ['Yearly', 'yearly'],
-              ['Custom', 'custom']
-            ], params[:period_type]), class: 'form-control', id: 'profit_and_loss_statement_period_type' %>
+            <%= select_tag 'period_type', options_for_select(list_period_type, params[:period_type]), class: 'form-control', id: 'profit_and_loss_statement_period_type' %>
           </div>
 
           <div class="form-group <%= params[:period_type] == 'monthly' ? '' : 'hide' %> profit-and-loss-statement-month">
