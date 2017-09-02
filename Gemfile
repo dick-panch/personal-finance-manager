@@ -105,6 +105,6 @@ gem 'momentjs-rails'
 ## Gon
 gem 'gon'
 
-gem 'heroku-deflater', group: :production
-gem 'heroku_rails_deflate', group: :production
+#gem 'heroku-deflater', group: :production
+#gem 'heroku_rails_deflate', group: :production
 gem 'rails_critical_css_server'
