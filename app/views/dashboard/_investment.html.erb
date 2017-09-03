@@ -8,10 +8,10 @@
         <canvas id="categorize_monthly_investments_chart"></canvas>
         <script type="text/javascript">categorize_monthly_investments_chart(); </script>
       </div>
-      <% if @category_investment_for_current_month.present? %>
+      <% if category_investment_for_current_month.present? %>
         <div class="col-md-6">
           <ul class="chart-list">
-            <% @category_investment_for_current_month.each_with_index do |data, index| %>
+            <% category_investment_for_current_month.each_with_index do |data, index| %>
               <li class="color<%= index < 8 ? index+1 : index-8 %>">
                 <font><%= data['category'] %></font>
                 <span><%= data['percent']%>%</span>

@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
 	before_action :authenticate_user!
 	include DashboardHelper
+
 	def index
 		report = DashboardReport.new(current_user)
 		report.exec

@@ -4,11 +4,11 @@
     <th class="col-sm-4 col-xs-3 col-md-4">Amount</th>
   </thead>
   <tbody>
-    <% if @incomes.present? %>
+    <% if incomes.present? %>
       <tr>
         <td colspan="2"><b>Category</b></td>
       </tr>
-      <% @incomes.each do |category, transactions| %>
+      <% incomes.each do |category, transactions| %>
         <tr class='sub-tr-first-td'>
           <td><%= category %></td>
           <td><span class="pull-right">
@@ -18,12 +18,12 @@
       <% end %>
       <tr>
         <td><b>Category Incomes Total</b></td>
-        <td><b class="pull-right"><%= money_format(@incomes.values.flatten.map{|t| t.amount}.sum) %></b></td>
+        <td><b class="pull-right"><%= money_format(incomes.values.flatten.map{|t| t.amount}.sum) %></b></td>
       </tr>
       <tr>
         <td><b class="capital">Total Assets</b></td>
         <td><span class="pull-right">
-          <b><%= money_format(@incomes.values.flatten.map{|t| t.amount}.sum) %></b>
+          <b><%= money_format(incomes.values.flatten.map{|t| t.amount}.sum) %></b>
         </span></td>
       </tr>
     <% else %>

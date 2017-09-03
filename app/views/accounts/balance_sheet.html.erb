@@ -23,11 +23,11 @@
         <div class='ibox-content'>
           <div class="col-lg-6 pad0">
             <!-- Assets -->
-            <%= render '/accounts/assets' %>
+            <%= render '/accounts/assets', incomes: @incomes %>
           </div>
           <div class="col-lg-6 pad0">
             <!-- Liabilities / Expenses -->
-            <%= render '/accounts/liabilities' %>
+            <%= render '/accounts/liabilities', investments: @investments, expenses: @expenses, incomes: @incomes %>
           </div>
           <div class="clearfix"></div>
         </div>

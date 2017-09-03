@@ -49,8 +49,8 @@
   </div>
 
   <div class="row">
-    <%= render partial: '/dashboard/expense' %>
-    <%= render partial: '/dashboard/income' %>
-    <%= render partial: '/dashboard/investment' %>
+    <%= render '/dashboard/expense', category_expenses_for_current_month: @category_expenses_for_current_month %>
+    <%= render '/dashboard/income', category_incomes_for_current_month: @category_incomes_for_current_month %>
+    <%= render '/dashboard/investment', category_investment_for_current_month: @category_investment_for_current_month %>
   </div>
 </div>

@@ -4,11 +4,11 @@
     <th class="col-sm-4 col-xs-3 col-md-4">Amount</th>
   </thead>
   <tbody>
-    <% if @investments.present? %>
+    <% if investments.present? %>
       <tr>
         <td colspan="2"><b>Investment Categories</b></td>
       </tr>
-      <% @investments.each do |category, transactions| %>
+      <% investments.each do |category, transactions| %>
         <tr class='sub-tr-first-td'>
           <td><%= category %></td>
           <td><span class="pull-right">
@@ -18,14 +18,14 @@
       <% end %>
       <tr>
         <td><b>Category Investments Total</b></td>
-        <td><b class="pull-right"><%= money_format(@investments.values.flatten.map{|t| t.amount}.sum) %></b></td>
+        <td><b class="pull-right"><%= money_format(investments.values.flatten.map{|t| t.amount}.sum) %></b></td>
       </tr>
     <% end %>
-    <% if @expenses.present? %>
+    <% if expenses.present? %>
       <tr>
         <td colspan="2"><b>Expense Categories</b></td>
       </tr>
-      <% @expenses.each do |category, transactions| %>
+      <% expenses.each do |category, transactions| %>
         <tr class='sub-tr-first-td'>
           <td><%= category %></td>
           <td><span class="pull-right">
@@ -35,18 +35,18 @@
       <% end %>
       <tr>
         <td><b>Category Expenses Total</b></td>
-        <td><b class="pull-right"><%= money_format(@expenses.values.flatten.map{|t| t.amount}.sum) %></b></td>
+        <td><b class="pull-right"><%= money_format(expenses.values.flatten.map{|t| t.amount}.sum) %></b></td>
       </tr>
       <tr>
         <td>Total Capital</td>
         <td><span class="pull-right">
-          <%= money_format(@incomes.values.flatten.map{|t| t.amount}.sum - (@expenses.values.flatten.map{|t| t.amount}.sum + @investments.values.flatten.map{|t| t.amount}.sum)) %>
+          <%= money_format(incomes.values.flatten.map{|t| t.amount}.sum - (expenses.values.flatten.map{|t| t.amount}.sum + investments.values.flatten.map{|t| t.amount}.sum)) %>
         </span></td>
       </tr>
       <tr>
         <td><b class="capital">Total Liabilities & Capital</b></td>
         <td><span class="pull-right">
-          <b><%= money_format(@incomes.values.flatten.map{|t| t.amount}.sum) %></b>
+          <b><%= money_format(incomes.values.flatten.map{|t| t.amount}.sum) %></b>
         </span></td>
       </tr>
     <% else %>
