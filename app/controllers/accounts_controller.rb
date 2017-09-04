@@ -1,3 +1,4 @@
+## Accounts Controller
 class AccountsController < ApplicationController
 	before_action :authenticate_user!
 	add_breadcrumb 'Home', :dashboard_url, title: 'Back to Dashboard Page'

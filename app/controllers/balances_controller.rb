@@ -1,3 +1,4 @@
+## Balances Controller
 class BalancesController < ApplicationController
 	before_action :authenticate_user!
 

@@ -1,3 +1,4 @@
+## Categories Controller
 class CategoriesController < ApplicationController
 	before_action :authenticate_user!
 	before_action :unauthorize_access, only: [:edit, :update, :destroy, :show]

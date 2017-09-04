@@ -1,3 +1,4 @@
+## Welcome Controller
 class WelcomeController < ApplicationController
 	layout 'welcome'
 	

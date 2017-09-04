@@ -1,3 +1,4 @@
+## Transactions Controller
 class TransactionsController < ApplicationController
 	before_action :authenticate_user!
 
@@ -47,29 +48,17 @@ class TransactionsController < ApplicationController
 
 	def yearly_expenses
 		add_breadcrumb 'Yearly Expenses'
-		@report = YearlyExpensesAndIncomes.new(current_user, 1, params[:year])
-		@report.exec
-    @report.send('get_instance_variable'.to_sym).each do |k, v|
-      instance_variable_set("@#{k}", v)
-    end
+		yearly_income_expense_investment(1, params[:year])
 	end
 
 	def yearly_incomes
 		add_breadcrumb 'Yearly Incomes'
-		@report = YearlyExpensesAndIncomes.new(current_user, 2, params[:year])
-		@report.exec
-    @report.send('get_instance_variable'.to_sym).each do |k, v|
-      instance_variable_set("@#{k}", v)
-    end
+		yearly_income_expense_investment(2, params[:year])
 	end
 
 	def yearly_investments
 		add_breadcrumb 'Yearly Investments'
-		@report = YearlyExpensesAndIncomes.new(current_user, 3, params[:year])
-		@report.exec
-    @report.send('get_instance_variable'.to_sym).each do |k, v|
-      instance_variable_set("@#{k}", v)
-    end
+		yearly_income_expense_investment(3, params[:year])
 	end
 
 	def import		
@@ -83,10 +72,11 @@ class TransactionsController < ApplicationController
 		params.require(:transaction).permit(:description, :is_received, :transaction_date, :amount, :is_paid, :is_favorite, :category_id, :payment_type_id, :is_repeat, :transaction_type_id, :user_id)
 	end
 
-	def find_transaction_type		
-		if params[:type].present? && params[:type].downcase == 'income' || transaction.type_id == 2
+	def find_transaction_type
+		type = params[:type].downcase || ''
+		if type == 'income' || transaction.type_id == 2
 			return 'income'
-		elsif params[:type].present? && params[:type].downcase == 'expense' || transaction.type_id == 1
+		elsif type == 'expense' || transaction.type_id == 1
 			return 'expense'
 		else
 			return 'investment'
@@ -95,5 +85,13 @@ class TransactionsController < ApplicationController
 
 	def find_categories(type_id)
 		Category.where('(user_id IS NULL and category_type_id = ?) or (user_id = ? and category_type_id = ?)', type_id, current_user.id, type_id)
+	end
+
+	def yearly_income_expense_investment(id, year)
+		report = YearlyExpensesAndIncomes.new(current_user, id, year)
+		report.exec
+    report.send('get_instance_variable'.to_sym).each do |_k, _v|
+      instance_variable_set("@#{_k}", _v)
+    end
 	end
 end

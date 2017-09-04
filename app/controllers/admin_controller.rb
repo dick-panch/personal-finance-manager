@@ -1,3 +1,4 @@
+## Admin Controller
 class AdminController < ApplicationController
 	before_action :admin_authority
 	before_action :authenticate_user!
