@@ -3,14 +3,6 @@ function monthly_income_expense_graph(income_data, expense_data, investment_data
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
     datasets: [
       {
-        label: "Investment",
-        backgroundColor: "rgba(220,220,220,0.5)",
-        borderColor: "rgba(220,220,220,0.7)",
-        pointBackgroundColor: "rgba(220,220,220,0.9)",
-        pointBorderColor: "#fff",
-        data: investment_data
-      },
-      {
         label: "Income",
         backgroundColor: "rgba(26,179,148,0.1)",
         borderColor: "rgba(26,179,148,0.3)",
@@ -25,6 +17,14 @@ function monthly_income_expense_graph(income_data, expense_data, investment_data
         pointBackgroundColor: "rgba(237, 85, 101, 0.9)",
         pointBorderColor: "#fff",
         data: expense_data
+      },
+      {
+        label: "Investment",
+        backgroundColor: "rgba(220,220,220,0.5)",
+        borderColor: "rgba(220,220,220,0.7)",
+        pointBackgroundColor: "rgba(220,220,220,0.9)",
+        pointBorderColor: "#fff",
+        data: investment_data
       }
     ]
   };
