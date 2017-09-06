@@ -3,27 +3,28 @@ function monthly_income_expense_graph(income_data, expense_data, investment_data
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'],
     datasets: [
       {
-        label: "Expense",
-        backgroundColor: "rgba(253, 186, 193, 0.5)",
-        borderColor: "rgba(253, 186, 193, 0.7)",
-        pointBackgroundColor: "rgba(253, 186, 193, 1)",
-        pointBorderColor: "#fff",
-        data: expense_data
-      },
-      {
-        label: "Income",
-        backgroundColor: "rgba(26,179,148,0.5)",
-        borderColor: "rgba(26,179,148,0.7)",
-        pointBackgroundColor: "rgba(26,179,148,1)",
-        pointBorderColor: "#fff",
-        data: income_data
-      },{
         label: "Investment",
         backgroundColor: "rgba(220,220,220,0.5)",
         borderColor: "rgba(220,220,220,0.7)",
-        pointBackgroundColor: "rgba(220,220,220,1)",
+        pointBackgroundColor: "rgba(220,220,220,0.9)",
         pointBorderColor: "#fff",
         data: investment_data
+      },
+      {
+        label: "Income",
+        backgroundColor: "rgba(26,179,148,0.1)",
+        borderColor: "rgba(26,179,148,0.3)",
+        pointBackgroundColor: "rgba(26,179,148,0.5)",
+        pointBorderColor: "#fff",
+        data: income_data
+      },
+      {
+        label: "Expense",
+        backgroundColor: "rgba(237, 85, 101, 0.3)",
+        borderColor: "rgba(237, 85, 101, 0.7)",
+        pointBackgroundColor: "rgba(237, 85, 101, 0.9)",
+        pointBorderColor: "#fff",
+        data: expense_data
       }
     ]
   };
