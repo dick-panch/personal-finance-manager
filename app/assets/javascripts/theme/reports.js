@@ -47,22 +47,23 @@ function income_expense_bar_chart(){
 	  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   	datasets: [{
     	label: "Income",
-    	backgroundColor: 'rgba(220, 220, 220, 0.5)',
-    	pointBorderColor: "#fff",
+      backgroundColor: "rgba(26,179,148,0.5)",
+      borderColor: "rgba(26,179,148,0.7)",
+      pointBackgroundColor: "rgba(26,179,148,0.9)",
     	data: gon.incomes
   	},
   	{
     	label: "Expense",
-    	backgroundColor: 'rgba(26,179,148,0.5)',
-    	borderColor: "rgba(26,179,148,0.7)",
-    	pointBackgroundColor: "rgba(26,179,148,1)",
-    	pointBorderColor: "#fff",
+      backgroundColor: "rgba(237, 85, 101, 0.5)",
+      borderColor: "rgba(237, 85, 101, 0.7)",
+      pointBackgroundColor: "rgba(237, 85, 101, 0.9)",
+      pointBorderColor: "#fff",
     	data: gon.expenses
   	},{
       label: "Investment",
-      backgroundColor: 'rgba(247, 165, 74, 0.50)',
-      borderColor: "rgba(247, 165, 74, 0.71)",
-      pointBackgroundColor: "rgba(247, 165, 74, 1)",
+      backgroundColor: "rgba(220,220,220,0.5)",
+      borderColor: "rgba(220,220,220,0.7)",
+      pointBackgroundColor: "rgba(220,220,220,0.9)",
       pointBorderColor: "#fff",
       data: gon.investments
     }]
