@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/dick-panch/finance-manager.git
-  revision: 5a541ab394511c9a5c818c4131541ac7572c9da4
+  revision: 11629a4989009c012d42bd524c3b72e27f7680bd
   specs:
     finance_manager (0.1.0)
       devise (= 4.3.0)
@@ -42,6 +42,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    active_model_serializers (0.10.6)
+      actionpack (>= 4.1, < 6)
+      activemodel (>= 4.1, < 6)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.2)
     activejob (5.1.2)
       activesupport (= 5.1.2)
       globalid (>= 0.3.6)
@@ -78,6 +83,8 @@ GEM
     breadcrumbs_on_rails (3.0.1)
     builder (3.2.3)
     byebug (9.1.0)
+    case_transform (0.2)
+      activesupport
     chunky_png (1.3.8)
     climate_control (0.2.0)
     cocaine (0.5.8)
@@ -171,6 +178,7 @@ GEM
     jquery-validation-rails (1.16.0)
     json (1.8.6)
     json (1.8.6-java)
+    jsonapi-renderer (0.1.3)
     launchy (2.4.3)
       addressable (~> 2.3)
     launchy (2.4.3-java)
@@ -364,6 +372,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  active_model_serializers
   bootstrap-sass
   brakeman
   breadcrumbs_on_rails

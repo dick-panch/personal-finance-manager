@@ -17,7 +17,7 @@ module DashboardHelper
 		when 'expense'
 			return 'danger'
 		when 'investment'
-			return 'info'
+			return 'default'
 		end
 	end
 end

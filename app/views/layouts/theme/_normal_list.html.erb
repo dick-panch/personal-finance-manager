@@ -51,3 +51,10 @@
     <span class="nav-label">Reports</span>
   <% end %>
 </li>
+
+<li class="<%= 'active' if controller.controller_name == 'calendars' %>">
+  <%= link_to calendars_url, class: 'loader-display' do %>
+    <i class="fa fa-calendar"></i>
+    <span class="nav-label">Calendar</span>
+  <% end %>
+</li>

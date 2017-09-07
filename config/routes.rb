@@ -45,6 +45,9 @@ Rails.application.routes.draw do
   end
 
   resources :balances, only: [:index]
+  resources :calendars, only: [:index], path: 'calendar'
+  get '/calendar/fetch-all-transactions' => 'calendars#fetchAllTransactions'
+  
 
   ## Admin Routes ------------------------------------------------------
   namespace :admin do

@@ -1,0 +1,8 @@
+.wow.fadeInLeftBig.animated.wow2{
+	visibility: visible; 
+	animation-name: fadeInLeftBig;
+}
+.wow.fadeInUp.animated.wow3{
+	visibility: visible; 
+	animation-name: fadeInUp;
+}

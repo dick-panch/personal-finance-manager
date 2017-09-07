@@ -35,8 +35,6 @@
 //= require theme/bootstrap-datepicker.js
 //= require theme/chosen.jquery.js
 //= require theme/select2.full.min.js
-//= require moment
-//= require theme/daterangepicker.js
 // require bootstrap-daterangepicker
 
 // For Table
@@ -46,3 +44,10 @@
 //= require admin/categories.js
 //= require transactions.js
 //= require accounts.js
+
+// Calendar
+//= require theme/moment.min.js
+//= require theme/fullcalendar.min.js
+
+// Extra
+//= require calendars.js

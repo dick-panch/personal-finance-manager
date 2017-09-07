@@ -1,5 +1,6 @@
 @import 'bootstrap-sprockets';
 @import 'theme/bootstrap.min';
+@import 'theme/fullcalendar';
 @import 'theme/font-awesome.min';
 @import 'theme/toastr.min';
 @import 'theme/jquery.gritter';
@@ -8,7 +9,6 @@
 @import 'theme/datatables.min';
 @import 'theme/custom';
 @import 'theme/datepicker3';
-
 @import 'admin/categories';
 @import 'theme/select2.min';
 @import 'theme/bootstrap-chosen';

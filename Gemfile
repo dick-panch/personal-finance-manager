@@ -107,3 +107,5 @@ gem 'gon'
 
 gem 'rails_critical_css_server'
 gem 'heroku-deflater', :group => :production
+
+gem 'active_model_serializers'
