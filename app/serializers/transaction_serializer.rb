@@ -14,9 +14,9 @@ class TransactionSerializer < ActiveModel::Serializer
   end
 
   def color
-  	if object.type_id == 1
+  	if object.type_id == 2
   		'#1ab394'
-  	elsif object.type_id == 2
+  	elsif object.type_id == 1
   		'#ed5565'
   	elsif object.type_id == 3
   		'#23c6c8'
