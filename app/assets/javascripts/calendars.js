@@ -7,6 +7,7 @@ $(document).ready(function(){
     },
     editable: false,
     droppable: false,
+    contentHeight: 'auto',
     events: {
       url: 'http://wallet-management.herokuapp.com/calendar/fetch-all-transactions.json'
     },
