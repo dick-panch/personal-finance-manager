@@ -73,7 +73,7 @@ class TransactionsController < ApplicationController
 	end
 
 	def find_transaction_type
-		type = params[:type].downcase || ''
+		type = params[:type].present? ? params[:type].downcase : ''
 		if type == 'income' || transaction.type_id == 2
 			return 'income'
 		elsif type == 'expense' || transaction.type_id == 1
