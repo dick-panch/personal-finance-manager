@@ -1,0 +1,2 @@
+$("#myBudgetModal").modal('hide');
+$("#budget<%= @budget.id %>").html("<%= j render partial: '/budgets/box', locals: {budget: @budget} %>")

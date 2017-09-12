@@ -24,6 +24,7 @@
         <%= render partial: '/layouts/theme/page_header' %>
         <%= Gon::Base.render_data %>
         <%= yield %>
+        <div class="popup-open"></div>
         <%= render partial: '/layouts/theme/footer' %>
       </div>
       <%= render partial: '/layouts/theme/right_side' %>

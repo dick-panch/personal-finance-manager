@@ -16,4 +16,37 @@ namespace :cjobs do
   		end
   	end
 	end
+
+  desc 'CREATE BUDGET FOR NEW MONTH'
+  task create_budget_for_current_month: :environment do ## rake cjobs:create_budget_for_current_month
+    User.all.each do |user|
+      categories = Category.where('user_id IS NULL or user_id = ?', user.id).order('name ASC')
+      categories.each do |category|
+        
+        budget = category.budgets.find_by(user_id: user.id, month: Date.today.month, year: Date.today.year)
+
+        # Create budget for current month
+        category.budgets.find_or_create_by({
+          user_id: user.id,
+          month: Date.today.month,
+          year: Date.today.year          
+        })
+
+        if budget.present?
+          # Create budget for next month
+          if Date.today == Date.today.end_of_month
+            category.budgets.find_or_create_by({
+              user_id: user.id,
+              month: Date.today.next_month.month,
+              year: Date.today.next_month.year,
+              recursive: budget.recursive,
+              amount: budget.recursive? ? budget.amount : 0.0,
+              percent_of_income: budget.recursive? ? budget.percent_of_income : 0.0
+            })
+          end
+        end
+      end
+    end
+  end
+
 end

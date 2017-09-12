@@ -1,0 +1,45 @@
+<div class="modal inmodal" id="myBudgetModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content animated bounceInRight">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>        
+        <h4 class="modal-title">Create / Edit Budget</h4>
+        <small class="font-bold">Set your budget for your <b><u><%= @budget.category_name %></u></b> category.</small>
+      </div>      
+      <%= form_for @budget, html: {class: 'form-horizontal budget-popup-form'}, remote: true do |f| %>
+        <div class="modal-body">          
+          
+          <div class="form-group col-sm-5">
+            <%= f.label :amount, class: 'control-label' %>
+            <%= f.number_field :amount, placeholder: 'Budget Amount', class: 'form-control', min: 0 %>
+          </div>
+          
+          <div class="form-group col-sm-2 or-section"><center>OR</center></div>          
+          
+          <div class="form-group col-sm-5 pull-right">
+            <%= f.label :percent_of_income, class: 'control-label' %>
+            <%= f.number_field :percent_of_income, placeholder: 'Percent Of Income', class: 'form-control', max: 100, min: 0 %>
+          </div>
+          
+          <div class="clearfix"></div>
+          
+          <div class="form-group">
+            <div class="col-sm-10">
+              <div class="i-checks">
+                <label><%= f.check_box :recursive %> <i></i> Recursive / Repeat for next month ? </label>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-white" data-dismiss="modal">Close</button>          
+          <%= f.submit 'Save Changes', class: 'btn btn-primary', data: {disable_with: 'Please Wait...' } %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<h3 class="text-center"><%= budget_amount_or_percent_detail(budget, current_user) %></h3>
+<div class="text-center">
+	<div class="sparkline<%= budget.id %>">
+  	<canvas width="140" height="140"></canvas>
+	</div>
+</div>
+<% if !budget.is_budget_set? %>
+	<h5 class="text-center">You don't have set a budget/goal</h5>
+<% end %>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var v1 = <%= budget_percent_graph(budget, current_user)[0] %>;
+		var v2 = <%= budget_percent_graph(budget, current_user)[1] %>;
+		if(parseInt(v2) < 0){
+			sliceColors = ['#ed5565', '#F5F5F5']	
+	  }else{
+	    sliceColors = ['#1ab394', '#F5F5F5']	
+	  }
+	  var sparklineCharts = function(){
+	    $(".sparkline<%= budget.id %>").sparkline(<%= budget_percent_graph(budget, current_user) %>, {
+	      type: 'pie',
+	      height: '140',
+	      sliceColors: sliceColors
+	    });
+	  };
+	  var sparkResize;
+	  $(window).resize(function(e) {
+	    clearTimeout(sparkResize);
+	    sparkResize = setTimeout(sparklineCharts, 500);
+	  });
+	  sparklineCharts();
+	});
+</script>

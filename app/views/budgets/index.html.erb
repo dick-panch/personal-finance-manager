@@ -1,0 +1,43 @@
+<div class='row wrapper border-bottom white-bg page-heading'>
+  <div class='col-lg-10'>
+    <h2>Budget</h2>
+    <ol class='breadcrumb'><%= render_breadcrumbs tag: :li %></ol>
+  </div>
+</div>
+
+<div class='wrapper wrapper-content animated fadeInRight'>
+  <%= render '/budgets/filter' %>
+  <div class="row">
+    <% if @budgets.present? %>
+      <% @budgets.each do |budget| %>
+        <div class="col-lg-3">
+          <div class="ibox">
+            <div class="ibox-title">
+              <h5><%= budget.category_name %></h5>
+              <div class="ibox-tools">
+                <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <i class="fa fa-wrench"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                  <li><%= link_to 'Create/Edit Budget', edit_budget_url(budget, month: @month, year: @year), remote: true, data: {disable_with: 'Loading...'} %></li>                    
+                </ul>
+              </div>
+            </div>
+            <div class="ibox-content" id='budget<%= budget.id %>'>
+              <%= render '/budgets/box', budget: budget %>            
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="col-lg-12">
+        <div class="ibox">
+          <div class="ibox-title">
+            <h3 class="text-center">No Budget Set.</h3>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

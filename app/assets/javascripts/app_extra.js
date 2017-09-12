@@ -51,3 +51,4 @@
 
 // Extra
 //= require calendars.js
+//= require budgets.js

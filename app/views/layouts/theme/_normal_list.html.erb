@@ -58,3 +58,10 @@
     <span class="nav-label">Calendar</span>
   <% end %>
 </li>
+
+<li class="<%= 'active' if controller.controller_name == 'budgets' %>">
+  <%= link_to budgets_url, class: 'loader-display' do %>
+    <i class="fa fa-pie-chart"></i>
+    <span class="nav-label">Budget</span>
+  <% end %>
+</li>
