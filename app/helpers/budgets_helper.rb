@@ -8,7 +8,7 @@ module BudgetsHelper
 			pending = (budget.category_total_amount*100/bpoi).to_f.round(1) rescue 0.0
 			"₹#{budget.category_total_amount} / ₹#{bpoi}"
 		else
-			"0 / 0"
+			"₹#{budget.category_total_amount} / 0"
 		end
 	end
 
