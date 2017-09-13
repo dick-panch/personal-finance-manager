@@ -4,7 +4,7 @@
     <ol class='breadcrumb'><%= render_breadcrumbs tag: :li %></ol>
   </div>
   <div class="col-lg-2 pull-right mrgtop30">
-    <%= select_tag :year, options_for_select(@years, params[:year].present? ? params[:year] : Date.today.year), class: 'form-control', onchange: "window.location.href='/balances/?year='+$(this).val()" %>
+    <%= select_tag :year, options_for_select(@years, params[:year].present? ? params[:year] : Date.today.year), class: 'loader-display-change form-control', onchange: "window.location.href='/balances/?year='+$(this).val()" %>
   </div>
 </div>
 

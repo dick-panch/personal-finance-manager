@@ -64,4 +64,10 @@ $(document).ready(function() {
 		$('.loader-overlay').addClass('in').show();
 		$('.loader-shell').css('height', '100vh');
 	})
+
+	$('.loader-display-change').on('change', function() {
+		$('.loader-overlay').addClass('in').show();
+		$('.loader-shell').css('height', '100vh');
+	})
+
 });

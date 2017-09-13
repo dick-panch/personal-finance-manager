@@ -19,7 +19,7 @@
               <%= select_tag :year, options_for_select( (Date.today.year-5..Date.today.year).to_a.map{|year| year}, params[:year].present? ? params[:year].to_i : Date.today.year), class: 'form-control' %>
             </div>
             <div class="col-sm-2 month-dropdown">
-              <%= submit_tag 'Search', class: 'btn btn-primary btn-xs' %>
+              <%= submit_tag 'Search', class: 'loader-display btn btn-primary btn-xs' %>
             </div>
           <% end %>
         </div>

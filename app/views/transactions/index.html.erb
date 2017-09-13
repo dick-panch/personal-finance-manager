@@ -11,13 +11,13 @@
       <div class='ibox float-e-margins'>
         <div class="ibox-title">
           <div class="col-sm-2 month-dropdown">
-            <%= select_month(params[:month].present? ? params[:month].to_i : Date.today.month, {}, {class: 'form-control'}) %>
+            <%= select_month(params[:month].present? ? params[:month].to_i : Date.today.month, {}, {class: 'loader-display-change form-control'}) %>
           </div>
           <div class="col-sm-2 month-dropdown">
-            <%= select_year(params[:year].present? ? params[:year].to_i : Date.today, {end_year: Date.today.year + 1 }, {class: 'form-control'}) %>
+            <%= select_year(params[:year].present? ? params[:year].to_i : Date.today, {end_year: Date.today.year + 1 }, {class: 'loader-display-change form-control'}) %>
           </div>
           <div class="col-sm-2 month-dropdown">
-            <%= select_tag :type_id, options_for_select(Rails.application.secrets.transaction_types.invert.to_a, params[:type_id]), {include_blank: 'Select Type', class: 'form-control'} %>
+            <%= select_tag :type_id, options_for_select(Rails.application.secrets.transaction_types.invert.to_a, params[:type_id]), {include_blank: 'Select Type', class: 'loader-display-change form-control'} %>
           </div>
           <div class="ibox-tools pull-right">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">

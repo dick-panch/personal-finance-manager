@@ -19,7 +19,7 @@
             <%= select_tag :year, options_for_select(@years, @year), class: 'form-control' %>
           </div>
           <div class="form-group">
-            <%= submit_tag "Search", name: nil, class: 'btn btn-primary btn-inline', data: {disable_with: 'Searching...'} %>
+            <%= submit_tag "Search", name: nil, class: 'loader-display btn btn-primary btn-inline', data: {disable_with: 'Searching...'} %>
           </div>
         <% end %>
       </div>

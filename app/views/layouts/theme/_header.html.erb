@@ -20,7 +20,7 @@
         </div>
       </li>
       <li class="<%= 'active' if controller.controller_name == 'dashboard' %>">
-        <%= link_to dashboard_url do %>
+        <%= link_to dashboard_url, class: 'loader-display' do %>
           <i class="fa fa-th-large"></i>
           <span class="nav-label">Dashboards</span>
         <% end %>
