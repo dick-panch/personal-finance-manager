@@ -1,19 +1,20 @@
 <div class="inner-bg">
   <div class="container">
     <div class="row">
-      <div class="col-sm-7 text">
-        <h1 class="wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig;">Learn to Code in <strong>1 Month</strong></h1>
-        <div class="description wow fadeInLeftBig animated" style="visibility: visible; animation-name: fadeInLeftBig;">
-          <p>
-            We have been working very hard to create the new version of our course.
-            It comes with a lot of new features, easy to follow videos and images. Check it out now!
-          </p>
+      <div class="<%= current_user.present? ? 'col-sm-12' : 'col-sm-7' %> text">
+        <h1 class="wow fadeInLeftBig animated wow2">          
+          <strong> FIND FINANCIAL PEACE OF MIND </strong>
+        </h1>
+        <div class="description wow fadeInLeftBig animated wow2">
+          <p> Expense tracker that works anywhere, anytime. </p>
         </div>
-        <div class="top-big-link wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-          <a class="btn btn-link-2 scroll-link" href="javascript:void(0);">Know More</a>
+        <div class="top-big-link wow fadeInUp animated wow3">
+          <a class="btn btn-link-1 scroll-link" href="#pricing">Our prices</a>
+          <a class="btn btn-link-2 scroll-link" href="#features">Know More</a>
         </div>
       </div>
-      <div class="col-sm-5 form-box wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+      <% unless current_user.present?  %>
+        <div class="col-sm-5 form-box wow fadeInUp animated wow3">
           <div class="form-top">
             <div class="form-top-left">
               <h3>Sign In now</h3>
@@ -25,24 +26,10 @@
           </div>
           <div class="form-bottom">
             <%= render partial: '/layouts/flash' %>
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name, html: {class: 'user-session'})) do |f| %>
-              <div class="form-group">
-                <%= f.label :email, 'Email', class: 'sr-only' %>
-                <%= f.email_field :email, placeholder: 'Email', class: 'form-email form-control' %>
-              </div>
-              <div class="form-group">
-                <%= f.label :password, 'Password', class: 'sr-only' %>
-                <%= f.password_field :password, placeholder: 'Password', class: 'form-first-name form-control' %>
-              </div>
-              <%= f.button 'Sign In !', class: 'btn', data: {disable_with: 'Loading...'}, type: 'submit' %>
-              <div class="form-links">
-                <%= render "devise/shared/links" %>
-                <a href="javascript:void(0);" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> -
-                <a href="javascript:void(0);" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
-              </div>
-            <% end %>
+            <%= render partial: '/devise/sessions/form' %>
           </div>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

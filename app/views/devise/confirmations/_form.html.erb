@@ -1,0 +1,13 @@
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: 'user-resent-confirmation' }) do |f| %>
+  <%= devise_error_messages! %>
+  <div class="form-group">
+    <%= f.label :email, 'Email', class: 'sr-only' %>
+    <%= f.email_field :email, placeholder: 'Email', autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-first-name form-control' %>
+  </div>
+  <%= f.button 'Resend', class: 'btn', data: {disable_with: 'Loading...'}, type: 'submit' %>
+  <div class="form-links">
+    <%= render "devise/shared/links" %>
+    <a href="javascript:void(0);" class="launch-modal" data-modal-id="modal-privacy">Privacy Policy</a> -
+    <a href="javascript:void(0);" class="launch-modal" data-modal-id="modal-faq">FAQ</a>
+  </div>
+<% end %>
