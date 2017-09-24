@@ -206,6 +206,7 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.6.0)
     nested_form (0.3.2)
+    newrelic_rpm (4.4.0.336)
     nio4r (2.1.0)
     nio4r (2.1.0-java)
     nokogiri (1.8.0)
@@ -397,6 +398,7 @@ DEPENDENCIES
   memory_profiler
   momentjs-rails
   nested_form
+  newrelic_rpm
   paperclip (~> 5.0.0)
   pg (~> 0.18)
   puma (~> 3.0)
