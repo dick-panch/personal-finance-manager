@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/dick-panch/finance-manager.git
-  revision: 0c99e0aa65eb3b50febfa278169d9b78c3fb8c67
+  revision: 25a00cffceae1a41c619d2bb998592fbbb475e4e
   specs:
     finance_manager (0.1.0)
       devise (= 4.3.0)
