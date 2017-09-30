@@ -74,7 +74,7 @@ class TransactionsController < ApplicationController
 	end
 
 	def transaction_params
-		params.require(:transaction).permit(:description, :is_received, :transaction_date, :amount, :is_paid, :is_favorite, :category_id, :payment_type_id, :is_repeat, :transaction_type_id, :user_id)
+		params.require(:transaction).permit(:description, :is_received, :transaction_date, :amount, :is_paid, :is_favorite, :category_id, :payment_type_id, :is_repeat, :transaction_type_id, :user_id, :attachment)
 	end
 
 	def find_transaction_type

@@ -83,6 +83,12 @@
                 <td class="col-lg-3">Updated At</td>
                 <td><%= local_time(transaction.updated_at) %></td>
               </tr>
+              <% if transaction.attachment.present? %>
+                <tr>
+                  <td class="col-lg-3">View Bill / Invoice</td>
+                  <td><%= link_to 'View Bill / Invoice', transaction.attachment.url, target: '_blank' %></td>
+                </tr>
+              <% end %>
             </table>
           </div>
         </div>
