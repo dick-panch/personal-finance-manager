@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'existEmail' => 'api/users#existEmail'
   get 'notExistEmail' => 'api/users#notExistEmail'
   get 'existCategory' => 'api/categories#existCategory'
+  get 'getTransactionDescription' => 'api/transactions#get_transaction_description'
 
   ## After Login
   get '/dashboard' => 'dashboard#index', as: :dashboard

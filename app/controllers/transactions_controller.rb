@@ -1,13 +1,14 @@
 ## Transactions Controller
 class TransactionsController < ApplicationController
 	before_action :authenticate_user!
+	before_action :set_current_user_id_to_gon
 
 	expose :transactions, ->{ current_user.transactions.search(params).order('transaction_date DESC') }
 	expose :transaction, find_by: :slug
 	expose :income_categories, -> { find_categories(2) }
 	expose :expense_categories, -> { find_categories(1) }
 	expose :investment_categories, -> { find_categories(3) }
-	expose :type, -> { find_transaction_type }	
+	expose :type, -> { find_transaction_type }
 
 	add_breadcrumb 'Home', :dashboard_url, title: 'Back to Dashboard Page'
 	add_breadcrumb 'Transactions', :transactions_url, title: 'Back to the transactions'
@@ -61,12 +62,16 @@ class TransactionsController < ApplicationController
 		yearly_income_expense_investment(3, params[:year])
 	end
 
-	def import		
+	def import
 		result = Transaction.import(params[:transaction]['file'], current_user)
 		redirect_to dashboard_url, flash: result
 	end
 
 	private
+
+	def set_current_user_id_to_gon
+		gon.current_user_id = current_user.id
+	end
 
 	def transaction_params
 		params.require(:transaction).permit(:description, :is_received, :transaction_date, :amount, :is_paid, :is_favorite, :category_id, :payment_type_id, :is_repeat, :transaction_type_id, :user_id)
