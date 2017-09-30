@@ -17,14 +17,14 @@ $("#new_transaction").validate({
 	rules: {
 		'transaction[description]': {
 			required: true
-		},		
+		},
 		'transaction[transaction_date]': {
-			required: true,			
+			required: true,
 		},
 		'transaction[amount]': {
 			required: true,
-			number: true			
-		}	
+			number: true
+		}
 	},
 	messages: {
 		'transaction[description]': {
@@ -34,9 +34,9 @@ $("#new_transaction").validate({
 			required: "can't be blank",
 		},
 		'transaction[amount]': {
-			required: "can't be blank",			
+			required: "can't be blank",
 		}
-	}	
+	}
 })
 
 // List Transaction with Previous Month or year
@@ -70,4 +70,25 @@ $(document).ready(function() {
 		$('.loader-shell').css('height', '100vh');
 	})
 
+});
+
+$( function() {
+  $( "#transaction_description2" ).autocomplete({
+    source: '/getTransactionDescription'
+  });
+
+  $( "#transaction_description" ).autocomplete({
+    source: function(request, response){
+    	$.ajax({
+    		url: '/getTransactionDescription',
+    		dataType: 'json',
+    		data: {
+    			q: request.term, id: gon.current_user_id
+    		},
+    		success: function(data){
+					response( data );
+    		}
+    	})
+    }
+  });
 });
