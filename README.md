@@ -12,3 +12,8 @@ In this application, We also display following things
 - Set Budget Monthly for your expenses
 
 You can view live - http://wallet-management.herokuapp.com/
+
+### For Login
+```
+email : test@yopmail.com and password : password
+```
